@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Free Resources — Formula</title>
+  <meta name="description" content="Free Google Sheets templates, Obsidian setups, ChatGPT prompts, and video tutorials — built for real use, not theory.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=Spline+Sans+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="main.js"></script>
+</head>
+<body>
+
+  <!-- ===== Header ===== -->
+  <header class="site-header">
+    <a href="/" class="logo">
+      <span class="logo-diamond">&#9670;</span>
+      <span class="logo-text">Formula</span>
+    </a>
+    <nav class="main-nav">
+      <a href="/">home</a>
+      <a href="/" class="active">resources</a>
+      <a href="#">blog</a>
+      <a href="#">newsletter</a>
+      <a href="#">about</a>
+    </nav>
+    <div class="header-right">
+      <span class="search-pill">&#8981; search <kbd>&#8984;K</kbd></span>
+      <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
+        <span class="knob"></span>
+      </button>
+      <button class="hamburger" id="hamburger" aria-label="Menu">&#9776;</button>
+    </div>
+  </header>
+
+  <!-- Mobile menu -->
+  <div class="mobile-menu" id="mobile-menu">
+    <button class="mobile-close" id="mobile-close">&times;</button>
+    <a href="/">home</a>
+    <a href="/">resources</a>
+    <a href="#">blog</a>
+    <a href="#">newsletter</a>
+    <a href="#">about</a>
+  </div>
+
+  <!-- Breadcrumb -->
+  <div class="breadcrumb">~ / formula &middot; resources</div>
+
+  <!-- ===== Main Content ===== -->
+  <main class="page-wrap">
+
+    <!-- Hero -->
+    <div class="hero">
+      <p class="hero-eyebrow">// FREE_RESOURCES</p>
+      <h1 class="hero-title">The templates, formulas & tools from my tutorials</h1>
+      <p class="hero-sub">Everything I build in my video tutorials, free to copy and adapt. Enter your email to download any template.</p>
+      <div class="cat-pills">
+        <span class="cat-pill" data-cat="sheets">Google Sheets templates</span>
+        <span class="cat-pill" data-cat="formulas">Useful formulas</span>
+        <span class="cat-pill" data-cat="prompts">ChatGPT prompts</span>
+        <span class="cat-pill" data-cat="tools">Study tools</span>
+      </div>
+    </div>
+
+    <!-- Start Here + How To -->
+    <div class="start-how-grid" data-section-cat="sheets">
+      <div>
+        <p class="section-label">START HERE</p>
+        <div class="start-grid">
+          <div class="ruled-item" onclick="openGate('everyday-use-cases','Everyday Use Cases','https://docs.google.com/spreadsheets/d/TEMPLATE_ID_EVERYDAY/copy')">
+            <div class="ruled-item-meta">
+              <span class="ruled-item-label accent">SHEETS &middot; START</span>
+              <span class="ruled-item-action">&#9993; open</span>
+            </div>
+            <h3 class="ruled-item-title">Everyday Use Cases</h3>
+            <p class="ruled-item-desc">Practical daily uses — tracking, organizing, simple automation.</p>
+          </div>
+          <div class="ruled-item" onclick="openGate('monthly-financial-tasks','Monthly Financial Tasks','https://docs.google.com/spreadsheets/d/TEMPLATE_ID_MONTHLY/copy')">
+            <div class="ruled-item-meta">
+              <span class="ruled-item-label accent">SHEETS &middot; START</span>
+              <span class="ruled-item-action">&#9993; open</span>
+            </div>
+            <h3 class="ruled-item-title">Monthly Financial Tasks</h3>
+            <p class="ruled-item-desc">A checklist sheet for tracking recurring monthly tasks.</p>
+          </div>
+        </div>
+      </div>
+      <div class="how-to">
+        <p class="section-label">HOW TO USE</p>
+        <div class="how-to-step"><span class="how-to-num">01</span><span class="how-to-text">Open the Google Sheet link.</span></div>
+        <div class="how-to-step"><span class="how-to-num">02</span><span class="how-to-text">Click File &#9656; Make a copy.</span></div>
+        <div class="how-to-step"><span class="how-to-num">03</span><span class="how-to-text">Save it to your own Drive.</span></div>
+      </div>
+    </div>
+
+    <!-- Google Sheets Templates — Data Table -->
+    <div class="section" data-section-cat="sheets">
+      <h2 class="section-heading">Google Sheets templates</h2>
+      <p class="section-sub">Eleven ready-to-copy sheets. <span class="tbc">[tbc] = video coming soon</span></p>
+      <div class="data-table">
+        <div class="data-table-head">
+          <div>Template</div>
+          <div>What it does</div>
+          <div>Template</div>
+          <div>Video</div>
+        </div>
+
+        <!-- NEW LEAD MAGNET — Claude Code Cheat Sheet -->
+        <div class="data-table-row">
+          <div class="dt-name">Vibe Coding Starter Pack</div>
+          <div class="dt-desc">A beginner-friendly guide to getting started with vibe coding — prompts, workflows, and tools to build with AI.</div>
+          <div><span class="dt-link" onclick="openGate('vibe-coding-starter-pack','Vibe Coding Starter Pack','https://docs.google.com/document/d/1Q9iIWG7sgKOIxWZnHyyuYktkyH50NQAHFOomMANywaw/copy')">&#9993; open</span></div>
+          <div><span class="dt-link pending">&#9654; [tbc]</span></div>
+        </div>
+
+        <div class="data-table-row">
+          <div class="dt-name">Slipbox Idea Capture</div>
+          <div class="dt-desc">A mobile-friendly sheet for capturing ideas, quotes and sources, ready to process into Obsidian notes.</div>
+          <div><span class="dt-link" onclick="openGate('slipbox-idea-capture','Slipbox Idea Capture','https://docs.google.com/spreadsheets/d/TEMPLATE_ID_SLIPBOX/copy')">&#9993; open</span></div>
+          <div><span class="dt-link pending">&#9654; [tbc]</span></div>
+        </div>
+
+        <div class="data-table-row">
+          <div class="dt-name">Vendor Matrix</div>
+          <div class="dt-desc">A comparison sheet for evaluating vendors against cost, features and overall fit.</div>
+          <div><span class="dt-link" onclick="openGate('vendor-matrix','Vendor Matrix','https://docs.google.com/spreadsheets/d/TEMPLATE_ID_VENDOR/copy')">&#9993; open</span></div>
+          <div><span class="dt-link pending">&#9654; [tbc]</span></div>
+        </div>
+
+        <div class="data-table-row">
+          <div class="dt-name">Everyday Use Cases</div>
+          <div class="dt-desc">Practical ways to use Sheets for daily tasks — tracking, organizing and simple automation.</div>
+          <div><span class="dt-link" onclick="openGate('everyday-use-cases','Everyday Use Cases','https://docs.google.com/spreadsheets/d/TEMPLATE_ID_EVERYDAY/copy')">&#9993; open</span></div>
+          <div><a class="dt-link" href="https://www.youtube.com/@ZheniaVasiliev" target="_blank">&#9654; watch</a></div>
+        </div>
+
+        <div class="data-table-row">
+          <div class="dt-name">Shopping</div>
+          <div class="dt-desc">A simple shopping list to organize items, quantities and planning before the store.</div>
+          <div><span class="dt-link" onclick="openGate('shopping','Shopping','https://docs.google.com/spreadsheets/d/TEMPLATE_ID_SHOPPING/copy')">&#9993; open</span></div>
+          <div><a class="dt-link" href="https://www.youtube.com/@ZheniaVasiliev" target="_blank">&#9654; watch</a></div>
+        </div>
+
+        <div class="data-table-row">
+          <div class="dt-name">Spanish Vocabulary Capture</div>
+          <div class="dt-desc">A structured sheet for collecting and organizing Spanish vocabulary while studying or reading.</div>
+          <div><span class="dt-link" onclick="openGate('spanish-vocab','Spanish Vocabulary Capture','https://docs.google.com/spreadsheets/d/TEMPLATE_ID_SPANISH/copy')">&#9993; open</span></div>
+          <div><a class="dt-link" href="https://www.youtube.com/@ZheniaVasiliev" target="_blank">&#9654; watch</a></div>
+        </div>
+
+        <div class="data-table-row">
+          <div class="dt-name">Simple Currency Converter</div>
+          <div class="dt-desc">A setup that converts currencies automatically using live exchange rates.</div>
+          <div><span class="dt-link" onclick="openGate('currency-converter','Simple Currency Converter','https://docs.google.com/spreadsheets/d/TEMPLATE_ID_CURRENCY/copy')">&#9993; open</span></div>
+          <div><a class="dt-link" href="https://www.youtube.com/@ZheniaVasiliev" target="_blank">&#9654; watch</a></div>
+        </div>
+
+        <div class="data-table-row">
+          <div class="dt-name">Simple Dropdown</div>
+          <div class="dt-desc">An example sheet showing how to create dropdown lists for cleaner data entry.</div>
+          <div><span class="dt-link" onclick="openGate('simple-dropdown','Simple Dropdown','https://docs.google.com/spreadsheets/d/TEMPLATE_ID_DROPDOWN/copy')">&#9993; open</span></div>
+          <div><a class="dt-link" href="https://www.youtube.com/@ZheniaVasiliev" target="_blank">&#9654; watch</a></div>
+        </div>
+
+        <div class="data-table-row">
+          <div class="dt-name">Monthly Financial Tasks</div>
+          <div class="dt-desc">A checklist-style sheet for tracking recurring monthly financial tasks.</div>
+          <div><span class="dt-link" onclick="openGate('monthly-financial-tasks','Monthly Financial Tasks','https://docs.google.com/spreadsheets/d/TEMPLATE_ID_MONTHLY/copy')">&#9993; open</span></div>
+          <div><a class="dt-link" href="https://www.youtube.com/@ZheniaVasiliev" target="_blank">&#9654; watch</a></div>
+        </div>
+
+        <div class="data-table-row">
+          <div class="dt-name">Project Plan</div>
+          <div class="dt-desc">A planning sheet for organizing tasks, timelines, statuses and priorities in one place.</div>
+          <div><span class="dt-link" onclick="openGate('project-plan','Project Plan','https://docs.google.com/spreadsheets/d/TEMPLATE_ID_PROJECT/copy')">&#9993; open</span></div>
+          <div><span class="dt-link pending">&#9654; [tbc]</span></div>
+        </div>
+
+        <div class="data-table-row">
+          <div class="dt-name">Wish &amp; Replenish List</div>
+          <div class="dt-desc">A tracker for items you want to buy and household supplies that need replenishing.</div>
+          <div><span class="dt-link" onclick="openGate('wish-replenish','Wish & Replenish List','https://docs.google.com/spreadsheets/d/TEMPLATE_ID_WISH/copy')">&#9993; open</span></div>
+          <div><span class="dt-link pending">&#9654; [tbc]</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ChatGPT Prompts -->
+    <div class="section" data-section-cat="prompts">
+      <h2 class="section-heading" style="margin-bottom:18px;">ChatGPT prompts</h2>
+      <div class="prompts-grid">
+        <div class="ruled-item" onclick="copyText('You are a note converter. I will paste a CSV export from Google Sheets (the SlipBox Idea Capture template). Each row is one note with columns: Status, Date, Type, Source, Title, Idea, Tags, Page, Quote.\n\nFor each row, produce one Markdown file. Use this format:\n\n---\ntitle: {Title}\ndate: {Date}\ntype: {Type}\nsource: {Source}\ntags: [{Tags, split by comma}]\n---\n\n# {Title}\n\n{Idea}\n\n> {Quote}\n\n— {Source}, p. {Page}\n\nOutput all files separated by --- on their own line. Do not add commentary.', 'Slipbox CSV to Obsidian')">
+          <div class="ruled-item-meta">
+            <span class="ruled-item-label muted">PROMPT &middot; 01</span>
+            <span class="ruled-item-action">&#10697; copy</span>
+          </div>
+          <h3 class="ruled-item-title-sm">Slipbox CSV &rarr; Obsidian Markdown</h3>
+          <p class="ruled-item-desc">Converts SlipBox CSV notes into one clean Markdown file per row.</p>
+        </div>
+
+        <div class="ruled-item" onclick="copyText('You are a meeting-minutes formatter. I will paste raw notes from a meeting. Rewrite them into this structure:\n\n# Meeting Minutes — [Topic]\n**Date:** [date]\n**Attendees:** [names]\n\n## Agenda\n1. ...\n\n## Discussion\n- ...\n\n## Decisions\n- ...\n\n## Action Items\n| Item | Owner | Due |\n|------|-------|-----|\n| ... | ... | ... |\n\n## Next Meeting\n- Date: ...\n- Topics: ...\n\nKeep language concise. Use bullet points. Do not invent information — only restructure what I provide.', 'Meeting Minutes Formatter')">
+          <div class="ruled-item-meta">
+            <span class="ruled-item-label muted">PROMPT &middot; 02</span>
+            <span class="ruled-item-action">&#10697; copy</span>
+          </div>
+          <h3 class="ruled-item-title-sm">Meeting Minutes Formatter</h3>
+          <p class="ruled-item-desc">Turns rough notes into a clean record with a fixed structure.</p>
+        </div>
+
+        <div class="ruled-item" onclick="copyText('You are a vocabulary-table builder. I will give you a topic or a list of words in [language]. For each word, produce a row with:\n\n| Word | Translation | Example sentence | Notes |\n\nIf I give a topic, choose 15-20 common words. If I give a list, use those words. Example sentences should be simple (A2-B1 level). Notes column: gender, irregular forms, or common collocations.\n\nOutput as a Markdown table. No commentary before or after the table.', 'Vocabulary Table Generator')">
+          <div class="ruled-item-meta">
+            <span class="ruled-item-label muted">PROMPT &middot; 03</span>
+            <span class="ruled-item-action">&#10697; copy</span>
+          </div>
+          <h3 class="ruled-item-title-sm">Vocabulary Table Generator</h3>
+          <p class="ruled-item-desc">Builds a two-column vocabulary reference with example sentences.</p>
+        </div>
+
+        <div class="ruled-item" onclick="copyText('You are a self-study course designer. I will tell you:\n1. What I want to learn\n2. My current level (beginner/intermediate/advanced)\n3. How many hours per week I can dedicate\n4. My target timeline\n\nDesign a structured syllabus with:\n- Weekly modules (title + learning objectives)\n- Recommended resources (free when possible)\n- Practice exercises or projects for each module\n- Milestones to check progress\n- A final project or assessment\n\nFormat as a clean Markdown document with headings, bullet points, and a timeline table.', 'Self-Study Course Creator')">
+          <div class="ruled-item-meta">
+            <span class="ruled-item-label muted">PROMPT &middot; 04</span>
+            <span class="ruled-item-action">&#10697; copy</span>
+          </div>
+          <h3 class="ruled-item-title-sm">Self-Study Course Creator</h3>
+          <p class="ruled-item-desc">Designs a custom self-guided syllabus from your goals and time.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Obsidian & Anki -->
+    <div class="section" data-section-cat="tools">
+      <h2 class="section-heading" style="margin-bottom:18px;">Obsidian &amp; Anki</h2>
+      <div class="tools-grid">
+        <div class="ruled-item" onclick="copyText('---\ntitle: Meeting Minutes — {{title}}\ndate: {{date}}\nattendees:\n  - \n---\n\n## Agenda\n1. \n\n## Discussion\n- \n\n## Decisions\n- \n\n## Action Items\n| Item | Owner | Due |\n|------|-------|-----|\n|  |  |  |\n\n## Next Meeting\n- Date: \n- Topics: ', 'Meeting Notes Template')">
+          <div class="ruled-item-meta">
+            <span class="ruled-item-label muted">OBSIDIAN</span>
+            <span class="ruled-item-action">&darr; .md</span>
+          </div>
+          <h3 class="ruled-item-title-sm">Meeting Notes Template</h3>
+          <p class="ruled-item-desc">Participants, agenda, decisions and actions in one note.</p>
+        </div>
+
+        <div class="ruled-item" onclick="copyText('---\ntitle: \ndate: {{date}}\nsource: \ntags: []\nlinks: []\n---\n\n## Main Idea\n\n\n## Supporting Points\n- \n\n## Quotes\n> \n\n## My Thoughts\n\n\n## Connections\n- [[]]', 'Slipbox Permanent Note')">
+          <div class="ruled-item-meta">
+            <span class="ruled-item-label muted">OBSIDIAN</span>
+            <span class="ruled-item-action">&#10697; copy</span>
+          </div>
+          <h3 class="ruled-item-title-sm">Slipbox Permanent Note</h3>
+          <p class="ruled-item-desc">A permanent-note skeleton with frontmatter for links and quotes.</p>
+        </div>
+
+        <div class="ruled-item" onclick="copyText('<div style=\"display:grid; grid-template-columns:1fr 1fr; gap:4px;\">\n  <img src=\"{{image1}}\">\n  <img src=\"{{image2}}\">\n  <img src=\"{{image3}}\">\n  <img src=\"{{image4}}\">\n</div>', 'Grid of Four Images')">
+          <div class="ruled-item-meta">
+            <span class="ruled-item-label muted">ANKI</span>
+            <span class="ruled-item-action">&#10697; copy</span>
+          </div>
+          <h3 class="ruled-item-title-sm">Grid of Four Images</h3>
+          <p class="ruled-item-desc">A snippet to lay out four images in a 2&times;2 grid on a card.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Google Sheets Formulas -->
+    <div class="section" data-section-cat="formulas">
+      <h2 class="section-heading" style="margin-bottom:18px;">Google Sheets formulas</h2>
+      <div class="formula-block">
+        <div class="formula-header">
+          <div>
+            <h3 class="formula-title">Conditional formatting — highlight duplicates</h3>
+            <p class="formula-desc">Flags duplicate values across a column. <a href="https://www.youtube.com/@ZheniaVasiliev" target="_blank">&#9654; video explainer</a></p>
+          </div>
+          <button class="copy-chip" onclick="event.stopPropagation(); copyText('=AND($A2<>\"out\", LEN(TRIM($J2))>0,\n  COUNTIFS(\n    ARRAYFORMULA(TRIM(LOWER($J$2:$J$2198))),\n    TRIM(LOWER($J2)),\n    $A$2:$A$2198,\"<>out\")>1)', 'Duplicate formula')">&#10697; copy</button>
+        </div>
+        <pre class="formula-code">=AND($A2&lt;&gt;"out", LEN(TRIM($J2))&gt;0,
+  COUNTIFS(
+    ARRAYFORMULA(TRIM(LOWER($J$2:$J$2198))),
+    TRIM(LOWER($J2)),
+    $A$2:$A$2198,"&lt;&gt;out")&gt;1)</pre>
+      </div>
+    </div>
+
+    <!-- Newsletter Band -->
+    <div class="section" style="padding-bottom:48px;">
+      <div class="newsletter-band">
+        <div>
+          <p class="nl-eyebrow">// NEWSLETTER</p>
+          <h2 class="nl-title">Join the newsletter</h2>
+          <p class="nl-desc">New templates are released occasionally. Join 10+ readers learning practical Google Sheets tips.</p>
+        </div>
+        <form class="nl-form" id="newsletter-form">
+          <input type="email" placeholder="Email address" required>
+          <input type="text" placeholder="First name">
+          <button type="submit" class="btn-mint">subscribe &rarr;</button>
+        </form>
+      </div>
+      <p class="page-footer">~ / formula &middot; resources</p>
+    </div>
+
+  </main>
+
+  <!-- ===== Email Gate Modal ===== -->
+  <div class="modal-overlay" id="email-gate">
+    <div class="modal-card">
+      <button class="modal-close" id="modal-close">&times;</button>
+
+      <div id="modal-form">
+        <p class="modal-label">Enter your email to download</p>
+        <h3 class="modal-resource-name" id="modal-resource-name">Template Name</h3>
+        <!--
+          Mailchimp form action URL — replace with your actual URL.
+          Find it at: Mailchimp > Audience > Signup forms > Embedded forms
+          Use the form action URL, replacing /post? with /post-json?
+        -->
+        <form class="modal-form" id="gate-form" data-mc-url="">
+          <label>EMAIL ADDRESS <span class="req">*</span></label>
+          <input type="email" id="gate-email" placeholder="you@example.com" required>
+          <label>FIRST NAME</label>
+          <input type="text" id="gate-fname" placeholder="First name">
+          <label>LAST NAME</label>
+          <input type="text" id="gate-lname" placeholder="Last name">
+          <button type="submit" class="btn-mint-full" id="modal-submit">download template &rarr;</button>
+        </form>
+      </div>
+
+      <div id="modal-success" class="modal-success" style="display:none;">
+        <h3>You're in!</h3>
+        <p>Your template is ready. Click below to open it.</p>
+        <a id="success-link" href="#" target="_blank" class="btn-mint-full" style="display:inline-block; text-align:center;">Open template &rarr;</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast -->
+  <div class="toast" id="toast"></div>
+
+</body>
+</html>
