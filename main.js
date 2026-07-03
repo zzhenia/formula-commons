@@ -153,8 +153,8 @@
           if (lastName) params.set('LNAME', lastName);
           // Merge fields — these must be created in Mailchimp first
           // (Audience > Settings > Audience fields and *|MERGE|* tags)
-          params.set('MERGE3', resourceName);   // RESOURCE merge field
-          params.set('MERGE4', 'formula-website'); // SOURCE merge field
+          params.set('MMERGE6', resourceName);   // RESOURCE merge field
+          params.set('MMERGE7', 'formula-website'); // SOURCE merge field
           // Tags — Mailchimp embedded forms accept tags via hidden fields
           // Format: tags=TAG_ID or multiple tags params
           // We pass the category + 'formula-website' as tag names
@@ -188,6 +188,37 @@
     window.mcCallback = function () {
       // Silently succeed
     };
+
+    // --- Newsletter Form ---
+    var nlForm = document.getElementById('newsletter-form');
+    if (nlForm) {
+      nlForm.addEventListener('submit', function (e) {
+        e.preventDefault();
+
+        var email = document.getElementById('nl-email').value.trim();
+        if (!email) return;
+
+        var firstName = document.getElementById('nl-fname').value.trim();
+        var mcUrl = nlForm.getAttribute('data-mc-url');
+
+        if (mcUrl) {
+          var params = new URLSearchParams();
+          params.set('EMAIL', email);
+          if (firstName) params.set('FNAME', firstName);
+          params.set('MMERGE7', 'formula-website');
+          params.set('tags', 'newsletter,formula-website');
+
+          var script = document.createElement('script');
+          script.src = mcUrl + '&' + params.toString() + '&c=mcCallback';
+          document.body.appendChild(script);
+          script.onload = function () { script.remove(); };
+          script.onerror = function () { script.remove(); };
+        }
+
+        // Show confirmation
+        nlForm.innerHTML = '<p style="color:var(--accent);font-weight:600;">You\'re subscribed!</p>';
+      });
+    }
 
     // --- Copy to Clipboard ---
     window.copyText = function (text, label) {
