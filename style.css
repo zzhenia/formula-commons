@@ -391,6 +391,7 @@ body {
   grid-template-columns: 1.1fr 2fr 0.7fr 0.7fr;
   border-bottom: 1px solid var(--cardb);
   transition: background .15s ease;
+  cursor: pointer;
 }
 .data-table-row:last-child { border-bottom: none; }
 .data-table-row:hover { background: var(--tint); }
