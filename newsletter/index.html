@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Newsletter — Formula</title>
+  <meta name="description" content="Get free Google Sheets templates, formulas, and practical tips — delivered occasionally to your inbox.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=Spline+Sans+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css">
+  <script src="../main.js"></script>
+</head>
+<body>
+
+  <!-- ===== Header ===== -->
+  <header class="site-header">
+    <a href="/" class="logo">
+      <span class="logo-diamond">&#9670;</span>
+      <span class="logo-text">Formula</span>
+    </a>
+    <nav class="main-nav">
+      <a href="/">home</a>
+      <a href="/">resources</a>
+      <a href="#">blog</a>
+      <a href="/newsletter" class="active">newsletter</a>
+      <a href="#">about</a>
+    </nav>
+    <div class="header-right">
+      <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
+        <span class="knob"></span>
+      </button>
+      <button class="hamburger" id="hamburger" aria-label="Menu">&#9776;</button>
+    </div>
+  </header>
+
+  <!-- Mobile menu -->
+  <div class="mobile-menu" id="mobile-menu">
+    <button class="mobile-close" id="mobile-close">&times;</button>
+    <a href="/">home</a>
+    <a href="/">resources</a>
+    <a href="#">blog</a>
+    <a href="/newsletter">newsletter</a>
+    <a href="#">about</a>
+  </div>
+
+  <!-- ===== Main Content ===== -->
+  <main class="page-wrap" style="max-width:600px; margin:0 auto; padding-top:80px;">
+
+    <p class="hero-eyebrow">// NEWSLETTER</p>
+    <h1 class="hero-title" style="font-size:2.2rem;">Join the Formula newsletter</h1>
+    <p class="hero-sub" style="margin-bottom:36px;">Free templates, practical Google Sheets tips, and new tutorial announcements — delivered occasionally. No spam.</p>
+
+    <form class="nl-form" id="newsletter-form" data-mc-url="https://zheniavasilievdesign.us4.list-manage.com/subscribe/post-json?u=78f3dea3b7aa1c33329e26193&amp;id=1c48d8db33" style="flex-direction:column; gap:12px;">
+      <input type="email" id="nl-email" placeholder="Email address" required style="width:100%;">
+      <input type="text" id="nl-fname" placeholder="First name" style="width:100%;">
+      <div aria-hidden="true" style="position:absolute;left:-5000px;"><input type="text" name="b_78f3dea3b7aa1c33329e26193_1c48d8db33" tabindex="-1" value=""></div>
+      <button type="submit" class="btn-mint" style="width:100%;">subscribe &rarr;</button>
+    </form>
+
+    <p style="margin-top:48px; color:var(--faint); font-size:.85rem;">~ / formula &middot; newsletter</p>
+
+  </main>
+
+  <!-- Toast -->
+  <div class="toast" id="toast"></div>
+
+</body>
+</html>
