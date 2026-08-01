@@ -445,6 +445,11 @@ body {
 .accordion-header {
   cursor: pointer;
 }
+.accordion-actions {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
 .accordion-arrow {
   display: inline-block;
   font-size: 9px;
