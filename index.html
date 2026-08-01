@@ -20,11 +20,9 @@
       <span class="logo-text">Formula</span>
     </a>
     <nav class="main-nav">
-      <a href="/">home</a>
       <a href="/" class="active">resources</a>
-      <a href="#">blog</a>
       <a href="/newsletter">newsletter</a>
-      <a href="#">about</a>
+      <a href="/about">about</a>
     </nav>
     <div class="header-right">
       <span class="search-pill">&#8981; search <kbd>&#8984;K</kbd></span>
@@ -38,11 +36,9 @@
   <!-- Mobile menu -->
   <div class="mobile-menu" id="mobile-menu">
     <button class="mobile-close" id="mobile-close">&times;</button>
-    <a href="/">home</a>
     <a href="/">resources</a>
-    <a href="#">blog</a>
     <a href="/newsletter">newsletter</a>
-    <a href="#">about</a>
+    <a href="/about">about</a>
   </div>
 
   <!-- Breadcrumb -->
@@ -58,9 +54,8 @@
       <p class="hero-sub">Everything I build in my video tutorials, free to copy and adapt. Enter your email to download any template.</p>
       <div class="cat-pills">
         <span class="cat-pill" data-cat="sheets">Google Sheets templates</span>
-        <span class="cat-pill" data-cat="formulas">Useful formulas</span>
         <span class="cat-pill" data-cat="prompts">ChatGPT prompts</span>
-        <span class="cat-pill" data-cat="tools">Study tools</span>
+        <span class="cat-pill" data-cat="tools">Obsidian templates</span>
       </div>
     </div>
 
@@ -104,7 +99,8 @@
           <span class="ruled-item-action">&#9993; open</span>
         </div>
         <h3 class="ruled-item-title">Vibe Coding Starter Pack</h3>
-        <p class="ruled-item-desc">A beginner-friendly guide to getting started with vibe coding — prompts, workflows, and tools to build with AI. <span class="tbc">&#9654; video [tbc]</span></p>
+        <p class="ruled-item-desc">A beginner-friendly guide to getting started with vibe coding — prompts, workflows, and tools to build with AI.</p>
+        <p class="ruled-item-desc"><a class="dt-link" href="https://www.youtube.com/watch?v=jRGyFLJWIps" target="_blank" onclick="event.stopPropagation()">&#9654; watch</a></p>
       </div>
     </div>
 
@@ -124,14 +120,14 @@
           <div class="dt-name">Slipbox Idea Capture</div>
           <div class="dt-desc">A mobile-friendly sheet for capturing ideas, quotes and sources, ready to process into Obsidian notes.</div>
           <div><span class="dt-link">&#9993; open</span></div>
-          <div><span class="dt-link pending">&#9654; [tbc]</span></div>
+          <div><a class="dt-link" href="https://www.youtube.com/watch?v=ChMmfIS1yFE" target="_blank" onclick="event.stopPropagation()">&#9654; watch</a></div>
         </div>
 
         <div class="data-table-row" onclick="openGate('vendor-matrix','Vendor Matrix','https://docs.google.com/spreadsheets/d/1QAf7UK0qCNpmyzC-oiHKxYi4X3vHk-5HADU19w_PbSo/copy')">
           <div class="dt-name">Vendor Matrix</div>
           <div class="dt-desc">A comparison sheet for evaluating vendors against cost, features and overall fit.</div>
           <div><span class="dt-link">&#9993; open</span></div>
-          <div><span class="dt-link pending">&#9654; [tbc]</span></div>
+          <div><a class="dt-link" href="https://www.youtube.com/watch?v=1N1enupwTrE" target="_blank" onclick="event.stopPropagation()">&#9654; watch</a></div>
         </div>
 
         <div class="data-table-row" onclick="openGate('everyday-use-cases','Everyday Use Cases','https://docs.google.com/spreadsheets/d/1tQ48hV3O0A_8DDYf2C8InJQu6y7dS6avZKY-Na5lZkc/copy')">
@@ -234,55 +230,83 @@
       </div>
     </div>
 
-    <!-- Obsidian & Anki -->
+    <!-- Obsidian Templates -->
     <div class="section" data-section-cat="tools">
-      <h2 class="section-heading" style="margin-bottom:18px;">Obsidian &amp; Anki</h2>
-      <div class="tools-grid">
-        <div class="ruled-item" onclick="copyText('---\ntitle: Meeting Minutes — {{title}}\ndate: {{date}}\nattendees:\n  - \n---\n\n## Agenda\n1. \n\n## Discussion\n- \n\n## Decisions\n- \n\n## Action Items\n| Item | Owner | Due |\n|------|-------|-----|\n|  |  |  |\n\n## Next Meeting\n- Date: \n- Topics: ', 'Meeting Notes Template')">
-          <div class="ruled-item-meta">
-            <span class="ruled-item-label muted">OBSIDIAN</span>
-            <span class="ruled-item-action">&darr; .md</span>
+      <h2 class="section-heading" style="margin-bottom:18px;">Obsidian templates</h2>
+      <div class="tools-grid tools-grid-2">
+        <div class="ruled-item accordion-item" data-template="meeting-notes">
+          <div class="accordion-header" onclick="toggleAccordion(this)">
+            <div class="ruled-item-meta">
+              <span class="ruled-item-label muted">OBSIDIAN</span>
+              <span class="ruled-item-action accordion-arrow">&#9654;</span>
+            </div>
+            <h3 class="ruled-item-title-sm">Meeting Notes Template</h3>
+            <p class="ruled-item-desc">Participants, agenda, decisions and actions in one note.</p>
           </div>
-          <h3 class="ruled-item-title-sm">Meeting Notes Template</h3>
-          <p class="ruled-item-desc">Participants, agenda, decisions and actions in one note.</p>
+          <div class="accordion-body">
+            <pre class="accordion-code">---
+title: Meeting Minutes — {{title}}
+date: {{date}}
+attendees:
+  -
+---
+
+## Agenda
+1.
+
+## Discussion
+-
+
+## Decisions
+-
+
+## Action Items
+| Item | Owner | Due |
+|------|-------|-----|
+|  |  |  |
+
+## Next Meeting
+- Date:
+- Topics: </pre>
+            <button class="copy-chip accordion-copy" onclick="event.stopPropagation(); copyText('---\ntitle: Meeting Minutes — {{title}}\ndate: {{date}}\nattendees:\n  - \n---\n\n## Agenda\n1. \n\n## Discussion\n- \n\n## Decisions\n- \n\n## Action Items\n| Item | Owner | Due |\n|------|-------|-----|\n|  |  |  |\n\n## Next Meeting\n- Date: \n- Topics: ', 'Meeting Notes Template')">&#10697; copy</button>
+          </div>
         </div>
 
-        <div class="ruled-item" onclick="copyText('---\ntitle: \ndate: {{date}}\nsource: \ntags: []\nlinks: []\n---\n\n## Main Idea\n\n\n## Supporting Points\n- \n\n## Quotes\n> \n\n## My Thoughts\n\n\n## Connections\n- [[]]', 'Slipbox Permanent Note')">
-          <div class="ruled-item-meta">
-            <span class="ruled-item-label muted">OBSIDIAN</span>
-            <span class="ruled-item-action">&#10697; copy</span>
+        <div class="ruled-item accordion-item" data-template="slipbox-note">
+          <div class="accordion-header" onclick="toggleAccordion(this)">
+            <div class="ruled-item-meta">
+              <span class="ruled-item-label muted">OBSIDIAN</span>
+              <span class="ruled-item-action accordion-arrow">&#9654;</span>
+            </div>
+            <h3 class="ruled-item-title-sm">Slipbox Permanent Note</h3>
+            <p class="ruled-item-desc">A permanent-note skeleton with frontmatter for links and quotes.</p>
           </div>
-          <h3 class="ruled-item-title-sm">Slipbox Permanent Note</h3>
-          <p class="ruled-item-desc">A permanent-note skeleton with frontmatter for links and quotes.</p>
-        </div>
+          <div class="accordion-body">
+            <pre class="accordion-code">---
+title:
+date: {{date}}
+source:
+tags: []
+links: []
+---
 
-        <div class="ruled-item" onclick="copyText('<div style=\"display:grid; grid-template-columns:1fr 1fr; gap:4px;\">\n  <img src=\"{{image1}}\">\n  <img src=\"{{image2}}\">\n  <img src=\"{{image3}}\">\n  <img src=\"{{image4}}\">\n</div>', 'Grid of Four Images')">
-          <div class="ruled-item-meta">
-            <span class="ruled-item-label muted">ANKI</span>
-            <span class="ruled-item-action">&#10697; copy</span>
-          </div>
-          <h3 class="ruled-item-title-sm">Grid of Four Images</h3>
-          <p class="ruled-item-desc">A snippet to lay out four images in a 2&times;2 grid on a card.</p>
-        </div>
-      </div>
-    </div>
+## Main Idea
 
-    <!-- Google Sheets Formulas -->
-    <div class="section" data-section-cat="formulas">
-      <h2 class="section-heading" style="margin-bottom:18px;">Google Sheets formulas</h2>
-      <div class="formula-block">
-        <div class="formula-header">
-          <div>
-            <h3 class="formula-title">Conditional formatting — highlight duplicates</h3>
-            <p class="formula-desc">Flags duplicate values across a column. <a href="https://www.youtube.com/@ZheniaVasiliev" target="_blank">&#9654; video explainer</a></p>
+
+## Supporting Points
+-
+
+## Quotes
+&gt;
+
+## My Thoughts
+
+
+## Connections
+- [[]]</pre>
+            <button class="copy-chip accordion-copy" onclick="event.stopPropagation(); copyText('---\ntitle: \ndate: {{date}}\nsource: \ntags: []\nlinks: []\n---\n\n## Main Idea\n\n\n## Supporting Points\n- \n\n## Quotes\n> \n\n## My Thoughts\n\n\n## Connections\n- [[]]', 'Slipbox Permanent Note')">&#10697; copy</button>
           </div>
-          <button class="copy-chip" onclick="event.stopPropagation(); copyText('=AND($A2<>\"out\", LEN(TRIM($J2))>0,\n  COUNTIFS(\n    ARRAYFORMULA(TRIM(LOWER($J$2:$J$2198))),\n    TRIM(LOWER($J2)),\n    $A$2:$A$2198,\"<>out\")>1)', 'Duplicate formula')">&#10697; copy</button>
         </div>
-        <pre class="formula-code">=AND($A2&lt;&gt;"out", LEN(TRIM($J2))&gt;0,
-  COUNTIFS(
-    ARRAYFORMULA(TRIM(LOWER($J$2:$J$2198))),
-    TRIM(LOWER($J2)),
-    $A$2:$A$2198,"&lt;&gt;out")&gt;1)</pre>
       </div>
     </div>
 

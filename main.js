@@ -220,6 +220,12 @@
       });
     }
 
+    // --- Accordion Toggle ---
+    window.toggleAccordion = function (header) {
+      var item = header.closest('.accordion-item');
+      if (item) item.classList.toggle('open');
+    };
+
     // --- Copy to Clipboard ---
     window.copyText = function (text, label) {
       navigator.clipboard.writeText(text).then(function () {

@@ -432,6 +432,48 @@ body {
   grid-template-columns: 1fr 1fr 1fr;
   gap: 14px;
 }
+.tools-grid.tools-grid-2 {
+  grid-template-columns: 1fr 1fr;
+}
+
+/* --- Accordion --- */
+.accordion-item {
+  cursor: default;
+}
+.accordion-header {
+  cursor: pointer;
+}
+.accordion-arrow {
+  display: inline-block;
+  font-size: 9px;
+  transition: transform .2s ease;
+}
+.accordion-item.open .accordion-arrow {
+  transform: rotate(90deg);
+}
+.accordion-body {
+  display: none;
+  border-top: 1px solid var(--cardb);
+  margin-top: 12px;
+  padding-top: 12px;
+  position: relative;
+}
+.accordion-item.open .accordion-body {
+  display: block;
+}
+.accordion-code {
+  margin: 0;
+  padding: 14px 16px;
+  background: var(--code-bg);
+  color: var(--code-tx);
+  font: 400 12px/1.65 'Spline Sans Mono', monospace;
+  border-radius: 4px;
+  overflow-x: auto;
+  white-space: pre;
+}
+.accordion-copy {
+  margin-top: 10px;
+}
 
 /* --- Formula Block --- */
 .formula-block {
@@ -739,6 +781,39 @@ pre.formula-code {
   cursor: pointer;
 }
 
+/* --- About Page --- */
+.about-page {
+  max-width: 680px;
+  padding-top: 80px;
+}
+.about-body {
+  margin-top: 36px;
+}
+.about-section {
+  margin-bottom: 36px;
+}
+.about-heading {
+  font: 600 18px/1.3 'Archivo', sans-serif;
+  color: var(--hd);
+  margin: 0 0 10px;
+  letter-spacing: .01em;
+}
+.about-section p {
+  font: 400 15px/1.7 'Archivo', sans-serif;
+  letter-spacing: .02em;
+  color: var(--tx);
+  margin: 0 0 12px;
+}
+.about-section p:last-child {
+  margin-bottom: 0;
+}
+.about-section a {
+  color: var(--ac);
+}
+.about-section em {
+  font-style: italic;
+}
+
 /* --- Responsive --- */
 @media (max-width: 768px) {
   .site-header { padding: 12px 20px; }
@@ -766,7 +841,7 @@ pre.formula-code {
   }
 
   .prompts-grid { grid-template-columns: 1fr; }
-  .tools-grid { grid-template-columns: 1fr; }
+  .tools-grid, .tools-grid.tools-grid-2 { grid-template-columns: 1fr; }
 
   .newsletter-band {
     grid-template-columns: 1fr;

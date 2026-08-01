@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>About — Formula</title>
+  <meta name="description" content="Formula is a YouTube channel and resource library for productivity, knowledge management, and self-guided learning — built on the belief that education should be open.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=Spline+Sans+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css">
+  <script src="../main.js"></script>
+</head>
+<body>
+
+  <!-- ===== Header ===== -->
+  <header class="site-header">
+    <a href="/" class="logo">
+      <span class="logo-diamond">&#9670;</span>
+      <span class="logo-text">Formula</span>
+    </a>
+    <nav class="main-nav">
+      <a href="/">resources</a>
+      <a href="/newsletter">newsletter</a>
+      <a href="/about" class="active">about</a>
+    </nav>
+    <div class="header-right">
+      <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
+        <span class="knob"></span>
+      </button>
+      <button class="hamburger" id="hamburger" aria-label="Menu">&#9776;</button>
+    </div>
+  </header>
+
+  <!-- Mobile menu -->
+  <div class="mobile-menu" id="mobile-menu">
+    <button class="mobile-close" id="mobile-close">&times;</button>
+    <a href="/">resources</a>
+    <a href="/newsletter">newsletter</a>
+    <a href="/about">about</a>
+  </div>
+
+  <!-- ===== Main Content ===== -->
+  <main class="page-wrap about-page">
+
+    <p class="hero-eyebrow">// ABOUT</p>
+    <h1 class="hero-title" style="font-size:2.2rem;">What Formula is about</h1>
+
+    <div class="about-body">
+
+      <div class="about-section">
+        <h2 class="about-heading">Mission</h2>
+        <p>Formula explores and educates about productivity, knowledge management, and self-guided learning through research-based storytelling and community-driven content.</p>
+        <p>We support the free education movement. Education currently functions as a closed system built on exclusion. While knowledge itself is free to access, use, and develop, entry into the infrastructure that surrounds it often comes at a cost. We want to transform education into a tool for empowerment and bring knowledge back to people.</p>
+      </div>
+
+      <div class="about-section">
+        <h2 class="about-heading">What we cover</h2>
+        <p>Personal productivity, knowledge management, and AI-assisted workflows. The tools we teach with include Google Sheets, Obsidian, Claude, and Anki, but the deeper focus is on thinking infrastructure for creative work: structured, methodology-driven approaches that explain <em>why</em>, not just how.</p>
+        <p>Most productivity content asks "how do I do this?" We think the better question is "why am I doing this at all?" Asking "how" is useless without asking "why" first.</p>
+      </div>
+
+      <div class="about-section">
+        <h2 class="about-heading">What you'll find here</h2>
+        <p>Everything built in our video tutorials, free to copy and adapt: Google Sheets templates, Obsidian setups, ChatGPT prompts, and formulas. All of it is designed for real daily use, not theory.</p>
+        <p>New long-form videos go out weekly on <a href="https://www.youtube.com/@ZheniaVasiliev" target="_blank">YouTube</a>, with Shorts throughout the week. Templates and resources appear here as they're created.</p>
+      </div>
+
+      <div class="about-section">
+        <h2 class="about-heading">Who makes this</h2>
+        <p>Formula is created by Zhenia Vasiliev &mdash; information designer, creative technologist, and productivity practitioner based in Bogot&aacute;.</p>
+        <p>Zhenia holds a PhD in Cultural Studies from Goldsmiths, University of London and is PMP certified. Their background spans data visualization and information design at The Guardian and Contently in New York, and they currently work as Lead Graphic Designer at Pilot Institute.</p>
+        <p>That mix of research, design, and systems thinking is what gives Formula its angle: genuine methodology applied to everyday tools, not surface-level tips.</p>
+      </div>
+
+      <div class="about-section">
+        <h2 class="about-heading">Why "Commons"</h2>
+        <p>The name Formula Commons signals what we believe in: open knowledge, shared resources, no gatekeeping. The site is designed like a research publication, not a marketplace, because that reflects what it is &mdash; a library, not a store.</p>
+      </div>
+
+    </div>
+
+    <p style="margin-top:48px; padding-bottom:32px; color:var(--faint); font-size:.85rem;">~ / formula &middot; about</p>
+
+  </main>
+
+  <!-- Toast -->
+  <div class="toast" id="toast"></div>
+
+</body>
+</html>
