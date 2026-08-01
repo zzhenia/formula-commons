@@ -439,6 +439,8 @@ body {
 /* --- Accordion --- */
 .accordion-item {
   cursor: default;
+  min-width: 0;
+  overflow: hidden;
 }
 .accordion-header {
   cursor: pointer;
