@@ -476,7 +476,8 @@ body {
   font: 400 12px/1.65 'Spline Sans Mono', monospace;
   border-radius: 4px;
   overflow-x: auto;
-  white-space: pre;
+  white-space: pre-wrap;
+  word-wrap: break-word;
 }
 .accordion-copy {
   margin-bottom: 10px;
