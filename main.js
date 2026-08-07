@@ -82,6 +82,7 @@
     // Resource category map — used to tag Mailchimp contacts
     var RESOURCE_CATEGORIES = {
       'vibe-coding-starter-pack': 'vibe-coding',
+      'finance-calendar': 'sheets-template',
       'slipbox-idea-capture': 'sheets-template',
       'vendor-matrix': 'sheets-template',
       'everyday-use-cases': 'sheets-template',
@@ -94,13 +95,30 @@
       'wish-replenish': 'sheets-template'
     };
 
-    // Open email gate or go directly if already subscribed
-    window.openGate = function (slug, name, url) {
+    // Open email gate or go directly if already subscribed.
+    // opts.fromLink — arriving via a deep link, so there is no user gesture to
+    // spend on window.open (popup blockers eat it). Show the success card with
+    // the link instead and let the visitor click it.
+    window.openGate = function (slug, name, url, opts) {
+      opts = opts || {};
+      currentResourceUrl = url;
+
       if (isUnlocked(slug)) {
-        window.open(url, '_blank');
+        if (!opts.fromLink) {
+          window.open(url, '_blank');
+          return;
+        }
+        if (modalName) modalName.textContent = name;
+        if (modalForm) modalForm.style.display = 'none';
+        if (modalSuccess) modalSuccess.style.display = 'block';
+        if (modalSuccessLink) {
+          modalSuccessLink.href = url;
+          modalSuccessLink.textContent = 'Open template →';
+        }
+        if (modal) modal.classList.add('open');
+        document.body.style.overflow = 'hidden';
         return;
       }
-      currentResourceUrl = url;
       if (modalName) modalName.textContent = name;
       if (modalBtn) modalBtn.textContent = 'download ' + name.toLowerCase() + ' \u2192';
       if (modalForm) modalForm.style.display = 'block';
@@ -114,6 +132,19 @@
         modal.setAttribute('data-category', RESOURCE_CATEGORIES[slug] || 'sheets-template');
       }
     };
+
+    // Every gated resource carries data-gate / -slug / -name / -url.
+    // One delegated handler covers them all; the "watch" links inside a row
+    // stop propagation so they still open YouTube instead of the gate.
+    document.addEventListener('click', function (e) {
+      var item = e.target.closest && e.target.closest('[data-gate]');
+      if (!item) return;
+      window.openGate(
+        item.getAttribute('data-slug'),
+        item.getAttribute('data-name'),
+        item.getAttribute('data-url')
+      );
+    });
 
     if (closeModal) {
       closeModal.addEventListener('click', function () {
@@ -279,6 +310,47 @@
           }
         });
       });
+    });
+
+    // --- Deep links ---
+    // formulacommons.com/#slug scrolls to that resource, highlights the row,
+    // and opens its gate — so a YouTube description can point straight at one
+    // download instead of at the top of a long page.
+    var HIGHLIGHT_MS = 3000;
+    var highlightTimer = null;
+
+    function openFromHash(hash) {
+      var slug = (hash || '').replace(/^#/, '').trim();
+      if (!slug) return;
+
+      var target = document.getElementById(slug);
+      if (!target || !target.hasAttribute('data-gate')) return;
+
+      // A category filter may have hidden the section the target sits in
+      var section = target.closest('[data-section-cat]');
+      if (section && section.style.display === 'none') section.style.display = '';
+
+      target.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      target.classList.add('deep-link-target');
+      if (highlightTimer) clearTimeout(highlightTimer);
+      highlightTimer = setTimeout(function () {
+        target.classList.remove('deep-link-target');
+      }, HIGHLIGHT_MS);
+
+      // Let the scroll finish before the modal locks body overflow
+      setTimeout(function () {
+        window.openGate(
+          target.getAttribute('data-slug'),
+          target.getAttribute('data-name'),
+          target.getAttribute('data-url'),
+          { fromLink: true }
+        );
+      }, 550);
+    }
+
+    openFromHash(window.location.hash);
+    window.addEventListener('hashchange', function () {
+      openFromHash(window.location.hash);
     });
   });
 })();

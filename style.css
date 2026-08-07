@@ -418,6 +418,29 @@ body {
   color: var(--faint);
   cursor: default;
 }
+.dt-badge {
+  font: 600 9px/1 'Spline Sans Mono', monospace;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--ac);
+  border: 1px solid var(--ac);
+  border-radius: 500px;
+  padding: 3px 6px;
+  margin-left: 6px;
+  vertical-align: middle;
+}
+
+/* --- Deep-link target (formulacommons.com/#slug) --- */
+[data-gate][id] {
+  scroll-margin-top: 96px;
+}
+.deep-link-target {
+  animation: deep-link-flash 3s ease-out;
+}
+@keyframes deep-link-flash {
+  0%, 55% { background: var(--tint); box-shadow: inset 2px 0 0 var(--ac); }
+  100% { background: transparent; box-shadow: inset 2px 0 0 transparent; }
+}
 
 /* --- Prompts Grid --- */
 .prompts-grid {

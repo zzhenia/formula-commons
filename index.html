@@ -64,7 +64,7 @@
       <div>
         <p class="section-label">START HERE</p>
         <div class="start-grid">
-          <div class="ruled-item" onclick="openGate('everyday-use-cases','Everyday Use Cases','https://docs.google.com/spreadsheets/d/1tQ48hV3O0A_8DDYf2C8InJQu6y7dS6avZKY-Na5lZkc/copy')">
+          <div class="ruled-item" data-gate data-slug="everyday-use-cases" data-name="Everyday Use Cases" data-url="https://docs.google.com/spreadsheets/d/1tQ48hV3O0A_8DDYf2C8InJQu6y7dS6avZKY-Na5lZkc/copy">
             <div class="ruled-item-meta">
               <span class="ruled-item-label accent">SHEETS &middot; START</span>
               <span class="ruled-item-action">&#9993; open</span>
@@ -72,7 +72,7 @@
             <h3 class="ruled-item-title">Everyday Use Cases</h3>
             <p class="ruled-item-desc">Practical daily uses — tracking, organizing, simple automation.</p>
           </div>
-          <div class="ruled-item" onclick="openGate('monthly-financial-tasks','Monthly Financial Tasks','https://docs.google.com/spreadsheets/d/1edWuI6V8SmDc0OqCCBQn8CDY6apJlyOkJnRReu9Q1hk/copy')">
+          <div class="ruled-item" data-gate data-slug="monthly-financial-tasks" data-name="Monthly Financial Tasks" data-url="https://docs.google.com/spreadsheets/d/1edWuI6V8SmDc0OqCCBQn8CDY6apJlyOkJnRReu9Q1hk/copy">
             <div class="ruled-item-meta">
               <span class="ruled-item-label accent">SHEETS &middot; START</span>
               <span class="ruled-item-action">&#9993; open</span>
@@ -93,7 +93,7 @@
     <!-- Vibe Coding Starter Pack — Featured -->
     <div class="section" data-section-cat="sheets">
       <h2 class="section-heading" style="margin-bottom:18px;">Vibe Coding Starter Pack</h2>
-      <div class="ruled-item" onclick="openGate('vibe-coding-starter-pack','Vibe Coding Starter Pack','https://docs.google.com/document/d/1Q9iIWG7sgKOIxWZnHyyuYktkyH50NQAHFOomMANywaw/copy')">
+      <div class="ruled-item" id="vibe-coding-starter-pack" data-gate data-slug="vibe-coding-starter-pack" data-name="Vibe Coding Starter Pack" data-url="https://docs.google.com/document/d/1Q9iIWG7sgKOIxWZnHyyuYktkyH50NQAHFOomMANywaw/copy">
         <div class="ruled-item-meta">
           <span class="ruled-item-label accent">GUIDE &middot; NEW</span>
           <span class="ruled-item-action">&#9993; open</span>
@@ -107,7 +107,7 @@
     <!-- Google Sheets Templates — Data Table -->
     <div class="section" data-section-cat="sheets">
       <h2 class="section-heading">Google Sheets templates</h2>
-      <p class="section-sub">Ten ready-to-copy sheets. <span class="tbc">[tbc] = video coming soon</span></p>
+      <p class="section-sub">Eleven ready-to-copy sheets. <span class="tbc">[tbc] = video coming soon</span></p>
       <div class="data-table">
         <div class="data-table-head">
           <div>Template</div>
@@ -116,70 +116,77 @@
           <div>Video</div>
         </div>
 
-        <div class="data-table-row" onclick="openGate('slipbox-idea-capture','Slipbox Idea Capture','https://docs.google.com/spreadsheets/d/1DisZ7ez84FF2etttfKpqXly-1f52_-MSOrcAqowHiMg/copy')">
+        <div class="data-table-row" id="finance-calendar" data-gate data-slug="finance-calendar" data-name="Finance Calendar" data-url="https://docs.google.com/spreadsheets/d/1PtTRGmgCxESP7BBLhC0-KIL3Fjg0gTCDUyrCkEoLiNs/copy">
+          <div class="dt-name">Finance Calendar <span class="dt-badge">new</span></div>
+          <div class="dt-desc">A month-by-month calendar that puts every payment on the day it actually leaves your account, and flags the ones the funding account can't cover.</div>
+          <div><span class="dt-link">&#9993; open</span></div>
+          <div><span class="dt-link pending">&#9654; [tbc]</span></div>
+        </div>
+
+        <div class="data-table-row" id="slipbox-idea-capture" data-gate data-slug="slipbox-idea-capture" data-name="Slipbox Idea Capture" data-url="https://docs.google.com/spreadsheets/d/1DisZ7ez84FF2etttfKpqXly-1f52_-MSOrcAqowHiMg/copy">
           <div class="dt-name">Slipbox Idea Capture</div>
           <div class="dt-desc">A mobile-friendly sheet for capturing ideas, quotes and sources, ready to process into Obsidian notes.</div>
           <div><span class="dt-link">&#9993; open</span></div>
           <div><a class="dt-link" href="https://www.youtube.com/watch?v=ChMmfIS1yFE" target="_blank" onclick="event.stopPropagation()">&#9654; watch</a></div>
         </div>
 
-        <div class="data-table-row" onclick="openGate('vendor-matrix','Vendor Matrix','https://docs.google.com/spreadsheets/d/1QAf7UK0qCNpmyzC-oiHKxYi4X3vHk-5HADU19w_PbSo/copy')">
+        <div class="data-table-row" id="vendor-matrix" data-gate data-slug="vendor-matrix" data-name="Vendor Matrix" data-url="https://docs.google.com/spreadsheets/d/1QAf7UK0qCNpmyzC-oiHKxYi4X3vHk-5HADU19w_PbSo/copy">
           <div class="dt-name">Vendor Matrix</div>
           <div class="dt-desc">A comparison sheet for evaluating vendors against cost, features and overall fit.</div>
           <div><span class="dt-link">&#9993; open</span></div>
           <div><a class="dt-link" href="https://www.youtube.com/watch?v=1N1enupwTrE" target="_blank" onclick="event.stopPropagation()">&#9654; watch</a></div>
         </div>
 
-        <div class="data-table-row" onclick="openGate('everyday-use-cases','Everyday Use Cases','https://docs.google.com/spreadsheets/d/1tQ48hV3O0A_8DDYf2C8InJQu6y7dS6avZKY-Na5lZkc/copy')">
+        <div class="data-table-row" id="everyday-use-cases" data-gate data-slug="everyday-use-cases" data-name="Everyday Use Cases" data-url="https://docs.google.com/spreadsheets/d/1tQ48hV3O0A_8DDYf2C8InJQu6y7dS6avZKY-Na5lZkc/copy">
           <div class="dt-name">Everyday Use Cases</div>
           <div class="dt-desc">Practical ways to use Sheets for daily tasks — tracking, organizing and simple automation.</div>
           <div><span class="dt-link">&#9993; open</span></div>
           <div><a class="dt-link" href="https://www.youtube.com/@ZheniaVasiliev" target="_blank" onclick="event.stopPropagation()">&#9654; watch</a></div>
         </div>
 
-        <div class="data-table-row" onclick="openGate('shopping','Shopping','https://docs.google.com/spreadsheets/d/1NRFECEFqYz5QKaLXTxLYXRD2SUP_5GhPJJch0wElD5g/copy')">
+        <div class="data-table-row" id="shopping" data-gate data-slug="shopping" data-name="Shopping" data-url="https://docs.google.com/spreadsheets/d/1NRFECEFqYz5QKaLXTxLYXRD2SUP_5GhPJJch0wElD5g/copy">
           <div class="dt-name">Shopping</div>
           <div class="dt-desc">A simple shopping list to organize items, quantities and planning before the store.</div>
           <div><span class="dt-link">&#9993; open</span></div>
           <div><a class="dt-link" href="https://www.youtube.com/@ZheniaVasiliev" target="_blank" onclick="event.stopPropagation()">&#9654; watch</a></div>
         </div>
 
-        <div class="data-table-row" onclick="openGate('spanish-vocab','Spanish Vocabulary Capture','https://docs.google.com/spreadsheets/d/1R2LLjZ1XpdgtonjdfQnlIwkwN4vVKXGwuoaVAglD-_Y/copy')">
+        <div class="data-table-row" id="spanish-vocab" data-gate data-slug="spanish-vocab" data-name="Spanish Vocabulary Capture" data-url="https://docs.google.com/spreadsheets/d/1R2LLjZ1XpdgtonjdfQnlIwkwN4vVKXGwuoaVAglD-_Y/copy">
           <div class="dt-name">Spanish Vocabulary Capture</div>
           <div class="dt-desc">A structured sheet for collecting and organizing Spanish vocabulary while studying or reading.</div>
           <div><span class="dt-link">&#9993; open</span></div>
           <div><a class="dt-link" href="https://www.youtube.com/@ZheniaVasiliev" target="_blank" onclick="event.stopPropagation()">&#9654; watch</a></div>
         </div>
 
-        <div class="data-table-row" onclick="openGate('currency-converter','Simple Currency Converter','https://docs.google.com/spreadsheets/d/1vwgwkMQ-YwkjkTypP0ickn6-XZhghNdxq2Gqa0NIivY/copy')">
+        <div class="data-table-row" id="currency-converter" data-gate data-slug="currency-converter" data-name="Simple Currency Converter" data-url="https://docs.google.com/spreadsheets/d/1vwgwkMQ-YwkjkTypP0ickn6-XZhghNdxq2Gqa0NIivY/copy">
           <div class="dt-name">Simple Currency Converter</div>
           <div class="dt-desc">A setup that converts currencies automatically using live exchange rates.</div>
           <div><span class="dt-link">&#9993; open</span></div>
           <div><a class="dt-link" href="https://www.youtube.com/@ZheniaVasiliev" target="_blank" onclick="event.stopPropagation()">&#9654; watch</a></div>
         </div>
 
-        <div class="data-table-row" onclick="openGate('simple-dropdown','Simple Dropdown','https://docs.google.com/spreadsheets/d/1tsLRWGtwPPTpQBs8bNgUJCmOd2ydClwrWzWj3SXz-ck/copy')">
+        <div class="data-table-row" id="simple-dropdown" data-gate data-slug="simple-dropdown" data-name="Simple Dropdown" data-url="https://docs.google.com/spreadsheets/d/1tsLRWGtwPPTpQBs8bNgUJCmOd2ydClwrWzWj3SXz-ck/copy">
           <div class="dt-name">Simple Dropdown</div>
           <div class="dt-desc">An example sheet showing how to create dropdown lists for cleaner data entry.</div>
           <div><span class="dt-link">&#9993; open</span></div>
           <div><a class="dt-link" href="https://www.youtube.com/@ZheniaVasiliev" target="_blank" onclick="event.stopPropagation()">&#9654; watch</a></div>
         </div>
 
-        <div class="data-table-row" onclick="openGate('monthly-financial-tasks','Monthly Financial Tasks','https://docs.google.com/spreadsheets/d/1edWuI6V8SmDc0OqCCBQn8CDY6apJlyOkJnRReu9Q1hk/copy')">
+        <div class="data-table-row" id="monthly-financial-tasks" data-gate data-slug="monthly-financial-tasks" data-name="Monthly Financial Tasks" data-url="https://docs.google.com/spreadsheets/d/1edWuI6V8SmDc0OqCCBQn8CDY6apJlyOkJnRReu9Q1hk/copy">
           <div class="dt-name">Monthly Financial Tasks</div>
           <div class="dt-desc">A checklist-style sheet for tracking recurring monthly financial tasks.</div>
           <div><span class="dt-link">&#9993; open</span></div>
           <div><a class="dt-link" href="https://www.youtube.com/@ZheniaVasiliev" target="_blank" onclick="event.stopPropagation()">&#9654; watch</a></div>
         </div>
 
-        <div class="data-table-row" onclick="openGate('project-plan','Project Plan','https://docs.google.com/spreadsheets/d/13mVZanGwMMAtsDvXuzAGhbA87BfW5mscx8waCz7ewDQ/copy')">
+        <div class="data-table-row" id="project-plan" data-gate data-slug="project-plan" data-name="Project Plan" data-url="https://docs.google.com/spreadsheets/d/13mVZanGwMMAtsDvXuzAGhbA87BfW5mscx8waCz7ewDQ/copy">
           <div class="dt-name">Project Plan</div>
           <div class="dt-desc">A planning sheet for organizing tasks, timelines, statuses and priorities in one place.</div>
           <div><span class="dt-link">&#9993; open</span></div>
           <div><span class="dt-link pending">&#9654; [tbc]</span></div>
         </div>
 
-        <div class="data-table-row" onclick="openGate('wish-replenish','Wish &amp; Replenish List','https://docs.google.com/spreadsheets/d/1pwafS4BlHfvHEgug6Z_zIaNIpugU0ts7BcCVu4sg_bg/copy')">
+        <div class="data-table-row" id="wish-replenish" data-gate data-slug="wish-replenish" data-name="Wish &amp; Replenish List" data-url="https://docs.google.com/spreadsheets/d/1pwafS4BlHfvHEgug6Z_zIaNIpugU0ts7BcCVu4sg_bg/copy">
           <div class="dt-name">Wish &amp; Replenish List</div>
           <div class="dt-desc">A tracker for items you want to buy and household supplies that need replenishing.</div>
           <div><span class="dt-link">&#9993; open</span></div>
