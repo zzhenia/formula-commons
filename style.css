@@ -117,8 +117,8 @@ body {
   gap: 9px;
 }
 .logo-tagline {
-  font: 400 12px/1 'Spline Sans Mono', monospace;
-  color: var(--mut);
+  font: 400 11px/1 'Spline Sans Mono', monospace;
+  color: var(--faint);
   padding-left: 12px;
   border-left: 1px solid var(--cardb);
   white-space: nowrap;
