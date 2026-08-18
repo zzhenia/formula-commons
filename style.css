@@ -106,10 +106,22 @@ body {
   -webkit-backdrop-filter: blur(12px);
 }
 
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
 .logo {
   display: flex;
   align-items: center;
   gap: 9px;
+}
+.logo-tagline {
+  font: 400 12px/1 'Spline Sans Mono', monospace;
+  color: var(--mut);
+  padding-left: 12px;
+  border-left: 1px solid var(--cardb);
+  white-space: nowrap;
 }
 .logo-diamond {
   font: 700 13px/1 'Spline Sans Mono', monospace;
@@ -848,6 +860,7 @@ pre.formula-code {
 /* --- Responsive --- */
 @media (max-width: 768px) {
   .site-header { padding: 12px 20px; }
+  .logo-tagline { display: none; }
   .main-nav { display: none; }
   .search-pill { display: none; }
   .hamburger { display: block; }
