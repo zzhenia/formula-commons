@@ -7,9 +7,19 @@
   'use strict';
 
   // --- Theme Toggle ---
+  // Shared with blog.formulacommons.com via a parent-domain cookie, so the
+  // choice carries across both sites (localStorage is per-origin).
   const THEME_KEY = 'formula-theme';
+  const THEME_COOKIE = 'fc-theme';
+
+  function getCookieTheme() {
+    var m = document.cookie.match(/(?:^|;\s*)fc-theme=(dark|light)/);
+    return m ? m[1] : null;
+  }
 
   function getPreferredTheme() {
+    const cookie = getCookieTheme();
+    if (cookie) return cookie;
     const stored = localStorage.getItem(THEME_KEY);
     if (stored) return stored;
     return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
@@ -18,6 +28,8 @@
   function applyTheme(theme) {
     document.documentElement.setAttribute('data-theme', theme);
     localStorage.setItem(THEME_KEY, theme);
+    document.cookie = THEME_COOKIE + '=' + theme +
+      ';domain=.formulacommons.com;path=/;max-age=31536000;SameSite=Lax';
   }
 
   applyTheme(getPreferredTheme());
