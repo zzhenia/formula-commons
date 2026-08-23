@@ -33,3 +33,34 @@
 #### Open Questions
 - Header markup is copy-pasted across three files; any future header change needs three edits. Worth extracting to a JS-injected partial or a small build step?
 - Should the tagline also appear somewhere on mobile (e.g. inside the hamburger menu), or is hiding it fine?
+
+---
+
+## Session continued — type fix + cache bust
+
+#### Discussion Topics
+- Zhenia sent a screenshot: tagline was rendering large, in the body sans font, stacked below the logo — not the intended inline monospace treatment.
+- Requested the tagline match the breadcrumb type below it.
+
+#### Key Decisions
+- `.logo-tagline` now matches `.breadcrumb` exactly: `400 11px/1 'Spline Sans Mono', monospace` with `color: var(--faint)` (was 12px / `var(--mut)`). Divider border and `nowrap` kept.
+- Diagnosed the screenshot as a **stale `style.css`**, not a CSS bug — none of the new rules were applying, including the 768px hide, and the flex wrapper had collapsed to normal block flow. That's the exact signature of the old stylesheet being served.
+- Fix: appended `?v=2` to the `style.css` link on all three pages to force a fresh fetch. Bump the number on future CSS changes if caching bites again.
+
+#### Actions
+
+| Item | Owner | Notes |
+|------|-------|-------|
+| Change `.logo-tagline` to 11px / `var(--faint)` | Claude | Done — style.css |
+| Add `?v=2` cache-buster to all three stylesheet links | Claude | Done |
+| Commit + push | Claude | Done — fedc7d8 (first note file included) |
+| Reload live site, confirm tagline is small mono | Zhenia | Hard-refresh if it still looks stale |
+
+#### References
+- `style.css:119-125` — `.logo-tagline`
+- `style.css:209-215` — `.breadcrumb`, the type it now matches
+- `index.html:11`, `about/index.html:11`, `newsletter/index.html:11` — versioned stylesheet links
+- Commits: c964d20 (add tagline), fedc7d8 (type fix + cache bust)
+
+#### Open Questions
+- Manual `?v=N` bumping is easy to forget. Worth a tiny build step or a hash-based query, or is the site small enough that a hard-refresh is fine?

@@ -342,6 +342,9 @@ body {
 .how-to {
   border-top: 1px solid var(--cardb);
   padding: 18px 2px;
+  /* align the top border with the ruled items' first border in the left
+     column (section-label: 11px line + 16px margin) */
+  margin-top: 27px;
 }
 .how-to-step {
   display: flex;
