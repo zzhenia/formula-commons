@@ -181,8 +181,7 @@
         var email = document.getElementById('gate-email').value.trim();
         if (!email) return;
 
-        var firstName = document.getElementById('gate-fname').value.trim();
-        var lastName = document.getElementById('gate-lname').value.trim();
+        var gateName = document.getElementById('gate-name').value.trim();
 
         // Submit to the signup relay (Cloudflare Worker -> Ghost members).
         // Replaced the Mailchimp JSONP call 260822 — Ghost is the single
@@ -190,7 +189,7 @@
         var gateSlug = modal.getAttribute('data-slug') || 'unknown';
         subscribeViaRelay({
           email: email,
-          name: (firstName + ' ' + lastName).trim(),
+          name: gateName,
           resource: gateSlug,
           source: 'formula-website'
         });

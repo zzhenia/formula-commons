@@ -686,7 +686,7 @@ pre.formula-code {
   max-width: 460px;
   background: var(--card);
   border: 1px solid var(--cardb);
-  border-radius: 6px;
+  border-radius: 8px; /* matches the blog subscribe modal */
   padding: 30px;
   position: relative;
   animation: modalIn .2s ease;
