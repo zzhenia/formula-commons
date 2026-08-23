@@ -144,11 +144,18 @@ body {
 .main-nav a:hover {
   color: var(--hd);
 }
+.main-nav a { position: relative; }
 .main-nav a.active {
   font-weight: 600;
   color: var(--hd);
-  border-bottom: 2px solid var(--ac);
-  padding-bottom: 4px;
+}
+/* underline as an absolute element so it never shifts the text baseline */
+.main-nav a.active::after {
+  content: "";
+  position: absolute;
+  left: 0; right: 0; bottom: -7px;
+  height: 2px;
+  background: var(--ac);
 }
 
 .header-right {

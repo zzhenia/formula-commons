@@ -341,6 +341,14 @@
       }, 550);
     }
 
+    // ?e=1 marks a click from a nurture email — that reader already gave
+    // their email at download time, so unlock their resource up front and
+    // the gate shows "Open template →" instead of asking again.
+    if (new URLSearchParams(window.location.search).get('e') === '1') {
+      var emailSlug = (window.location.hash || '').replace(/^#/, '').trim();
+      if (emailSlug) markUnlocked(emailSlug);
+    }
+
     openFromHash(window.location.hash);
     window.addEventListener('hashchange', function () {
       openFromHash(window.location.hash);
