@@ -172,34 +172,16 @@
         var firstName = document.getElementById('gate-fname').value.trim();
         var lastName = document.getElementById('gate-lname').value.trim();
 
-        // Submit to Mailchimp via JSONP
-        var mcUrl = modalFormEl.getAttribute('data-mc-url');
-        var category = modal.getAttribute('data-category') || 'sheets-template';
-        var resourceName = modalName ? modalName.textContent : '';
-
-        if (mcUrl) {
-          var params = new URLSearchParams();
-          params.set('EMAIL', email);
-          if (firstName) params.set('FNAME', firstName);
-          if (lastName) params.set('LNAME', lastName);
-          // Merge fields — these must be created in Mailchimp first
-          // (Audience > Settings > Audience fields and *|MERGE|* tags)
-          params.set('MMERGE6', resourceName);   // RESOURCE merge field
-          params.set('MMERGE7', 'formula-website'); // SOURCE merge field
-          // Tags — Mailchimp embedded forms accept tags via hidden fields
-          // Format: tags=TAG_ID or multiple tags params
-          // We pass the category + 'formula-website' as tag names
-          params.set('tags', category + ',formula-website');
-
-          // JSONP request to Mailchimp
-          var fullUrl = mcUrl + '&' + params.toString();
-          var script = document.createElement('script');
-          script.src = fullUrl + '&c=mcCallback';
-          document.body.appendChild(script);
-          // Remove script tag after load
-          script.onload = function () { script.remove(); };
-          script.onerror = function () { script.remove(); };
-        }
+        // Submit to the signup relay (Cloudflare Worker -> Ghost members).
+        // Replaced the Mailchimp JSONP call 260822 — Ghost is the single
+        // subscriber database now; labels carry the old tag semantics.
+        var gateSlug = modal.getAttribute('data-slug') || 'unknown';
+        subscribeViaRelay({
+          email: email,
+          name: (firstName + ' ' + lastName).trim(),
+          resource: gateSlug,
+          source: 'formula-website'
+        });
 
         // Mark as unlocked
         var slug = modal.getAttribute('data-slug');
@@ -215,10 +197,17 @@
       });
     }
 
-    // Mailchimp JSONP callback
-    window.mcCallback = function () {
-      // Silently succeed
-    };
+    // Signup relay — fire-and-forget; the unlock UX never blocks on it
+    var RELAY_URL = 'https://formula-signup-relay.zzhenia.workers.dev';
+    function subscribeViaRelay(payload) {
+      try {
+        fetch(RELAY_URL, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload)
+        }).catch(function () { /* silently succeed, like the old JSONP */ });
+      } catch (err) { /* ignore */ }
+    }
 
     // --- Newsletter Form ---
     var nlForm = document.getElementById('newsletter-form');
@@ -230,21 +219,13 @@
         if (!email) return;
 
         var firstName = document.getElementById('nl-fname').value.trim();
-        var mcUrl = nlForm.getAttribute('data-mc-url');
 
-        if (mcUrl) {
-          var params = new URLSearchParams();
-          params.set('EMAIL', email);
-          if (firstName) params.set('FNAME', firstName);
-          params.set('MMERGE7', 'formula-website');
-          params.set('tags', 'newsletter,formula-website');
-
-          var script = document.createElement('script');
-          script.src = mcUrl + '&' + params.toString() + '&c=mcCallback';
-          document.body.appendChild(script);
-          script.onload = function () { script.remove(); };
-          script.onerror = function () { script.remove(); };
-        }
+        subscribeViaRelay({
+          email: email,
+          name: firstName,
+          resource: 'newsletter',
+          source: 'formula-website'
+        });
 
         // Show confirmation
         nlForm.innerHTML = '<p style="color:var(--accent);font-weight:600;">You\'re subscribed!</p>';
