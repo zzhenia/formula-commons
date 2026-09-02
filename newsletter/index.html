@@ -9,7 +9,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=Spline+Sans+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../style.css?v=5">
-  <script src="../main.js?v=5"></script>
+  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js?onload=onTurnstileLoad" async defer></script>
+  <script src="../main.js?v=6"></script>
 </head>
 <body>
 
@@ -53,7 +54,7 @@
     <form class="nl-form" id="newsletter-form" style="flex-direction:column; gap:12px;">
       <input type="email" id="nl-email" placeholder="Email address" required style="width:100%;">
       <input type="text" id="nl-fname" placeholder="First name" style="width:100%;">
-      <div aria-hidden="true" style="position:absolute;left:-5000px;"><input type="text" name="b_78f3dea3b7aa1c33329e26193_1c48d8db33" tabindex="-1" value=""></div>
+      <div aria-hidden="true" style="position:absolute;left:-5000px;"><input type="text" name="hp" tabindex="-1" autocomplete="off" value=""></div>
       <button type="submit" class="btn-mint" style="width:100%;">subscribe &rarr;</button>
     </form>
 

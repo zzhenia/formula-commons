@@ -9,7 +9,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=Spline+Sans+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css?v=5">
-  <script src="main.js?v=5"></script>
+  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js?onload=onTurnstileLoad" async defer></script>
+  <script src="main.js?v=6"></script>
 </head>
 <body>
 
@@ -486,6 +487,7 @@ links: []
           <input type="email" id="gate-email" placeholder="you@example.com" required>
           <label>NAME</label>
           <input type="text" id="gate-name" placeholder="Optional">
+          <div aria-hidden="true" style="position:absolute;left:-5000px;"><input type="text" name="hp" tabindex="-1" autocomplete="off" value=""></div>
           <button type="submit" class="btn-mint-full" id="modal-submit">download template &rarr;</button>
         </form>
       </div>

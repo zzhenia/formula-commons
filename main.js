@@ -187,11 +187,15 @@
         // Replaced the Mailchimp JSONP call 260822 — Ghost is the single
         // subscriber database now; labels carry the old tag semantics.
         var gateSlug = modal.getAttribute('data-slug') || 'unknown';
-        subscribeViaRelay({
-          email: email,
-          name: gateName,
-          resource: gateSlug,
-          source: 'formula-website'
+        turnstileToken(modalFormEl).then(function (token) {
+          subscribeViaRelay({
+            email: email,
+            name: gateName,
+            resource: gateSlug,
+            source: 'formula-website',
+            cf_token: token,
+            hp: honeypot(modalFormEl)
+          });
         });
 
         // Mark as unlocked
@@ -220,6 +224,51 @@
       } catch (err) { /* ignore */ }
     }
 
+    // Cloudflare Turnstile (260902) — invisible widget per form. The relay
+    // rejects any signup without a valid token (bots were creating Ghost
+    // members straight through the relay). The unlock UX never waits on it:
+    // if Turnstile fails or is slow we still submit, the relay rejects, and
+    // Kitty DMs Zhenia so a broken widget is visible.
+    var TURNSTILE_SITEKEY = '0x4AAAAAAElOMmeBR1GpCa0T';
+    var turnstileWidgets = {};
+    function turnstileMount(form) {
+      if (!window.turnstile || !form || turnstileWidgets[form.id]) return;
+      var holder = document.createElement('div');
+      holder.className = 'cf-turnstile-holder';
+      form.appendChild(holder);
+      turnstileWidgets[form.id] = window.turnstile.render(holder, {
+        sitekey: TURNSTILE_SITEKEY,
+        execution: 'execute',
+        appearance: 'interaction-only'
+      });
+    }
+    // Resolve a fresh token for the form, or '' after a short timeout.
+    function turnstileToken(form) {
+      return new Promise(function (resolve) {
+        var id = turnstileWidgets[form.id];
+        if (!window.turnstile || id === undefined) return resolve('');
+        var done = false;
+        var finish = function (t) { if (!done) { done = true; resolve(t || ''); } };
+        setTimeout(function () { finish(''); }, 4000);
+        try {
+          window.turnstile.execute(id, {
+            callback: finish,
+            'error-callback': function () { finish(''); },
+            'expired-callback': function () { finish(''); }
+          });
+        } catch (err) { finish(''); }
+      });
+    }
+    window.onTurnstileLoad = function () {
+      turnstileMount(document.getElementById('gate-form'));
+      turnstileMount(document.getElementById('newsletter-form'));
+    };
+    if (window.turnstile) window.onTurnstileLoad();
+    function honeypot(form) {
+      var hp = form.querySelector('input[name="hp"]');
+      return hp ? hp.value : '';
+    }
+
     // --- Newsletter Form ---
     var nlForm = document.getElementById('newsletter-form');
     if (nlForm) {
@@ -231,11 +280,16 @@
 
         var firstName = document.getElementById('nl-fname').value.trim();
 
-        subscribeViaRelay({
-          email: email,
-          name: firstName,
-          resource: 'newsletter',
-          source: 'formula-website'
+        var hp = honeypot(nlForm);
+        turnstileToken(nlForm).then(function (token) {
+          subscribeViaRelay({
+            email: email,
+            name: firstName,
+            resource: 'newsletter',
+            source: 'formula-website',
+            cf_token: token,
+            hp: hp
+          });
         });
 
         // Show confirmation
