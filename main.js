@@ -115,11 +115,10 @@
       opts = opts || {};
       currentResourceUrl = url;
 
+      // Already subscribed: always show the success card with the link, for a
+      // card click as much as a deep link. The old direct window.open looked
+      // like "no popup" whenever the browser swallowed it (260904, Zhenia).
       if (isUnlocked(slug)) {
-        if (!opts.fromLink) {
-          window.open(url, '_blank');
-          return;
-        }
         if (modalName) modalName.textContent = name;
         if (modalForm) modalForm.style.display = 'none';
         if (modalSuccess) modalSuccess.style.display = 'block';
