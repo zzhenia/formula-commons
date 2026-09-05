@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Self-Maintaining Knowledge System — Formula</title>
+  <meta name="description" content="Five small tools your AI assistant builds around the notes you already have, so filing, merging, mapping and the weekly review run themselves. Obsidian, Logseq, any markdown folder.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=Spline+Sans+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css?v=6">
+  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js?onload=onTurnstileLoad" async defer></script>
+  <script src="../main.js?v=6"></script>
+</head>
+<body>
+
+  <!-- ===== Header ===== -->
+  <header class="site-header">
+    <div class="header-left">
+      <a href="/" class="logo">
+        <span class="logo-diamond">&#9670;</span>
+        <span class="logo-text">Formula</span>
+      </a>
+      <span class="logo-tagline">Your second brain, built right.</span>
+    </div>
+    <nav class="main-nav">
+      <a href="/">resources</a>
+      <a href="/smks" class="active">smks</a>
+      <a href="/newsletter">newsletter</a>
+      <a href="/about">about</a>
+    </nav>
+    <div class="header-right">
+      <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
+        <span class="knob"></span>
+      </button>
+      <button class="hamburger" id="hamburger" aria-label="Menu">&#9776;</button>
+    </div>
+  </header>
+
+  <!-- Mobile menu -->
+  <div class="mobile-menu" id="mobile-menu">
+    <button class="mobile-close" id="mobile-close">&times;</button>
+    <a href="/">resources</a>
+    <a href="/smks">smks</a>
+    <a href="/newsletter">newsletter</a>
+    <a href="/about">about</a>
+  </div>
+
+  <!-- Breadcrumb -->
+  <div class="breadcrumb">~ / formula &middot; smks</div>
+
+  <!-- ===== Main Content ===== -->
+  <main class="page-wrap smks">
+
+    <!-- 1. Hero -->
+    <div class="hero">
+      <p class="hero-eyebrow">// SELF-MAINTAINING_KNOWLEDGE_SYSTEM</p>
+      <h1 class="hero-title">Your second brain works. Its admin doesn't.</h1>
+      <p class="hero-sub">Five small tools your AI assistant (Claude Code, Codex, Gemini CLI, Cursor) builds around the notes you already have, so filing, merging, mapping and the weekly review run themselves.</p>
+      <a class="btn-mint smks-buy" href="#" data-checkout>Get SMKS &mdash; $17 &rarr;</a>
+      <p class="smks-fineprint">Obsidian &middot; Logseq &middot; any markdown folder &middot; bring your own AI</p>
+    </div>
+
+    <!-- 2. Trailer -->
+    <div class="smks-section">
+      <div class="smks-trailer" id="smks-trailer">
+        <span class="smks-trailer-label">// TRAILER &middot; 90 s</span>
+        <p>Every tool built on a real, messy vault. Mistakes included.</p>
+      </div>
+    </div>
+
+    <!-- 3. Quotes -->
+    <div class="smks-section">
+      <p class="section-label">From the people this is for</p>
+      <div class="smks-quotes">
+        <blockquote>&ldquo;That is not a second brain, that is a better organised pile.&rdquo;</blockquote>
+        <blockquote>&ldquo;Retrieval died, then the habit died.&rdquo;</blockquote>
+        <blockquote>&ldquo;12,000 notes in Obsidian. I haven&rsquo;t opened any of them in 6 months. What&rsquo;s the point?&rdquo;</blockquote>
+      </div>
+    </div>
+
+    <!-- 4. The five tools -->
+    <div class="smks-section">
+      <p class="section-label">The five tools</p>
+      <div class="smks-tools">
+        <div class="ruled-item smks-tool">
+          <span class="smks-tool-name">01 &middot; inbox sweeper</span>
+          <p class="ruled-item-desc">Files unprocessed daily notes into the notes they belong to, drafts the links, leaves you a five-minute review list.</p>
+        </div>
+        <div class="ruled-item smks-tool">
+          <span class="smks-tool-name">02 &middot; duplicate merger</span>
+          <p class="ruled-item-desc">Finds the notes you wrote twice, proposes one merged note, never deletes anything.</p>
+        </div>
+        <div class="ruled-item smks-tool">
+          <span class="smks-tool-name">03 &middot; vault map</span>
+          <p class="ruled-item-desc">A home page that rebuilds itself from what&rsquo;s actually in your vault, orphans included.</p>
+        </div>
+        <div class="ruled-item smks-tool">
+          <span class="smks-tool-name">04 &middot; meeting intake</span>
+          <p class="ruled-item-desc">A photo of a handwritten page becomes a filed, linked meeting note.</p>
+        </div>
+        <div class="ruled-item smks-tool">
+          <span class="smks-tool-name">05 &middot; weekly review runner</span>
+          <p class="ruled-item-desc">Runs the other four in one command and writes the review note; you answer three questions.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 5. Safe by design -->
+    <div class="smks-section smks-safe">
+      <p class="section-label">Safe by design</p>
+      <ul class="smks-safe-list">
+        <li>Saved before every run</li>
+        <li>Plan shown before every change</li>
+        <li>Nothing is ever deleted</li>
+      </ul>
+      <p class="smks-safe-note">The vault stays yours; git keeps every version.</p>
+    </div>
+
+    <!-- 6. What you get / what you need -->
+    <div class="smks-section smks-two-col">
+      <div>
+        <p class="section-label">What you get</p>
+        <ul class="smks-list">
+          <li><strong>The System Brief</strong> &mdash; one page about your notes, filled in before you open the terminal</li>
+          <li><strong>The Vault Memory File</strong> (<span class="mono">AGENTS.md</span>) &mdash; so your assistant knows your vault&rsquo;s rules every session, whichever assistant it is</li>
+          <li><strong>Five recipes</strong> &mdash; exact prompt sequences, copy and paste, one tool each</li>
+          <li><strong>The Safety card</strong> &mdash; backup in three commands, dry-run rule, restore in one command</li>
+          <li><strong>Five videos</strong> (~29 min) building every tool on a real, messy vault, mistakes included</li>
+          <li><strong>A one-page operating manual</strong></li>
+        </ul>
+      </div>
+      <div>
+        <p class="section-label">What you need</p>
+        <ul class="smks-list">
+          <li><strong>Your notes as markdown files</strong> &mdash; Obsidian, Logseq, iA Writer, or a plain folder</li>
+          <li><strong>Git on your machine</strong> &mdash; free; GitHub is optional</li>
+          <li><strong>One terminal AI assistant</strong> &mdash; Claude Code and Codex CLI need their paid plans (Claude Pro, ChatGPT Plus); Gemini CLI is free with a Google account; Cursor has a free tier. Install guide included.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- 7. Who it's for -->
+    <div class="smks-section smks-two-col">
+      <div>
+        <p class="section-label">For you if</p>
+        <ul class="smks-list">
+          <li>Your system mostly works, and there&rsquo;s a backlog you feel bad about</li>
+          <li>You&rsquo;ve abandoned an elaborate setup before and don&rsquo;t want another one</li>
+          <li>You&rsquo;re curious about AI assistants but afraid one will mess up your notes</li>
+          <li>You&rsquo;re not a developer and don&rsquo;t plan to become one</li>
+        </ul>
+      </div>
+      <div>
+        <p class="section-label">Not for you if</p>
+        <ul class="smks-list">
+          <li>Your notes live in Notion, Evernote or Apple Notes</li>
+          <li>You&rsquo;re a developer; you&rsquo;d build these in an afternoon anyway</li>
+          <li>You&rsquo;re still choosing an app; start with the free resources instead</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- 7b. Who made it -->
+    <div class="smks-section">
+      <p class="section-label">Who made it</p>
+      <div class="about-section smks-founder">
+        <p>I finished my PhD in four years instead of six, and for most of those years the real project underneath was how to capture and process knowledge without drowning in it.</p>
+        <p>Only afterwards did I find the Second Brain and Obsidian communities on Reddit, and I was surprised: with so many tools available, people were describing the same pains I&rsquo;d worked through alone.</p>
+        <p>So I went back to the problem with what&rsquo;s changed since: AI tools that can work inside a notes folder. SMKS is the result, an Obsidian-compatible vault template that stays open to whatever AI tool you use next.</p>
+        <p class="smks-sig">&mdash; Zhenia Vasiliev, <a href="/about">about Formula</a></p>
+      </div>
+    </div>
+
+    <!-- 8. Founding buyers -->
+    <div class="smks-section smks-founding">
+      <p class="section-label">Founding buyers</p>
+      <h2 class="nl-title">The first 30 get version 2 free, and shape what goes in it.</h2>
+      <p class="nl-desc">Built by you, on your vault. The tools are yours; they keep working when your vault changes, because you built them with your own rules written down.</p>
+      <a class="btn-mint smks-buy" href="#" data-checkout>Get SMKS &mdash; $17 &rarr;</a>
+    </div>
+
+    <!-- 9. FAQ -->
+    <div class="smks-section">
+      <p class="section-label">Questions</p>
+      <dl class="smks-faq">
+        <dt>Do I need to code?</dt>
+        <dd>No. You paste prompts; the assistant writes the tools.</dd>
+        <dt>Which AI do I need?</dt>
+        <dd>Any terminal assistant: Claude Code, Codex CLI, Gemini CLI, Cursor.</dd>
+        <dt>What if I don&rsquo;t have a paid AI plan?</dt>
+        <dd>Gemini CLI is free with a Google account; a local model via Ollama also works, weaker on merging and handwriting.</dd>
+        <dt>Will it touch my existing notes?</dt>
+        <dd>Only through the tools, after showing a plan, and never deleting; every run is one command to undo.</dd>
+        <dt>Does it work without GitHub?</dt>
+        <dd>Yes. Git on your machine is enough; GitHub is optional backup.</dd>
+        <dt>Refunds?</dt>
+        <dd>30 days, reply to your purchase email.</dd>
+      </dl>
+    </div>
+
+    <!-- 10. Newsletter + footer -->
+    <div class="section" style="padding-bottom:48px;">
+      <div class="newsletter-band">
+        <div>
+          <p class="nl-eyebrow">// NEWSLETTER</p>
+          <h2 class="nl-title">Not today? Follow the build.</h2>
+          <p class="nl-desc">New tools, recipes and videos as they ship. Occasional, no spam.</p>
+        </div>
+        <form class="nl-form" id="newsletter-form">
+          <input type="email" id="nl-email" placeholder="Email address" required>
+          <input type="text" id="nl-fname" placeholder="First name">
+          <div aria-hidden="true" style="position:absolute;left:-5000px;"><input type="text" name="hp" tabindex="-1" autocomplete="off" value=""></div>
+          <button type="submit" class="btn-mint">subscribe &rarr;</button>
+        </form>
+      </div>
+      <p class="page-footer">~ / formula &middot; smks &middot; <a href="/privacy">privacy</a> &middot; <a href="/terms">terms</a></p>
+    </div>
+
+  </main>
+
+  <!-- Toast -->
+  <div class="toast" id="toast"></div>
+
+  <script>
+    // Gumroad checkout. One place to change when the product URL is final.
+    (function () {
+      var CHECKOUT_URL = 'https://formulacommons.gumroad.com/l/self-maintaining-knowledge-system';
+      var links = document.querySelectorAll('[data-checkout]');
+      for (var i = 0; i < links.length; i++) {
+        links[i].href = CHECKOUT_URL;
+        links[i].target = '_blank';
+        links[i].rel = 'noopener';
+      }
+    })();
+  </script>
+
+</body>
+</html>
