@@ -284,15 +284,15 @@
           subscribeViaRelay({
             email: email,
             name: firstName,
-            resource: 'newsletter',
-            source: 'formula-website',
+            resource: nlForm.getAttribute('data-resource') || 'newsletter',
+            source: nlForm.getAttribute('data-source') || 'formula-website',
             cf_token: token,
             hp: hp
           });
         });
 
         // Show confirmation
-        nlForm.innerHTML = '<p style="color:var(--accent);font-weight:600;">You\'re subscribed!</p>';
+        nlForm.innerHTML = '<p style="color:var(--accent);font-weight:600;">' + (nlForm.getAttribute('data-done') || 'You\'re subscribed!') + '</p>';
       });
     }
 
