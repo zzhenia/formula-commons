@@ -291,8 +291,13 @@
           });
         });
 
-        // Show confirmation
-        nlForm.innerHTML = '<p style="color:var(--accent);font-weight:600;">' + (nlForm.getAttribute('data-done') || 'You\'re subscribed!') + '</p>';
+        // Show confirmation. Hide the fields rather than replacing innerHTML:
+        // the Turnstile iframe lives inside this form, and wiping it mid-challenge
+        // sent every newsletter signup with an empty token (relay 403, 260918).
+        Array.prototype.forEach.call(nlForm.children, function (c) {
+          if (!c.classList.contains('cf-turnstile-holder')) c.style.display = 'none';
+        });
+        nlForm.insertAdjacentHTML('beforeend', '<p style="color:var(--accent);font-weight:600;">' + (nlForm.getAttribute('data-done') || 'You\'re subscribed!') + '</p>');
       });
     }
 
