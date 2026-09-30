@@ -110,3 +110,16 @@ section{padding:44px 0 0}
 .toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
 @media(max-width:480px){.nav{gap:12px}.nav a{font-size:11px}}
 @media(max-width:760px){.getneed{grid-template-columns:1fr!important;gap:32px!important}}
+
+/* Log in → YT Autopilot */
+.login-link {
+  font: 400 11px/1 'Spline Sans Mono', monospace;
+  color: var(--mut);
+  text-decoration: none;
+  border: 1px solid var(--cardb);
+  border-radius: 4px;
+  padding: 6px 9px;
+  background: var(--card);
+  transition: color .15s ease, border-color .2s ease;
+}
+.login-link:hover { color: var(--ac); border-color: var(--ac); }
