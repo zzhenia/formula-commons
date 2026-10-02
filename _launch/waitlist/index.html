@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<title>SMKS waitlist — Self-Maintaining Knowledge System · Formula</title>
+<meta name="description" content="Five small tools your AI assistant builds around the notes you already have, so filing, merging, mapping and the weekly review run themselves. Obsidian, Logseq, any markdown folder.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,400..800;1,400..800&family=Spline+Sans+Mono:wght@400..700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/smks/smks.css?v=3">
+<script>try{if((document.cookie.match(/fc-theme=(dark|light)/)||[])[1]==='dark'||localStorage.getItem('formula-theme')==='dark')document.documentElement.setAttribute('data-theme','dark')}catch(e){}</script>
+<script src="https://challenges.cloudflare.com/turnstile/v0/api.js?onload=onTurnstileLoad" async defer></script>
+<script src="/main.js?v=8"></script>
+</head>
+<body>
+
+<header class="hdr">
+  <div class="wrap">
+    <a class="mark" href="/"><span>&#9670;</span>&nbsp;&nbsp;Formula</a>
+    <nav class="nav">
+      <a href="/">resources</a>
+      <a href="/newsletter/">newsletter</a>
+      <a href="/about/">about</a>
+      <a class="on" href="/smks/">smks</a>
+    </nav>
+    <a class="login-link" href="https://ytautopilot.formulacommons.com" title="YT Autopilot">log in</a>
+    <button class="tgl" id="theme-toggle" aria-label="Toggle theme"><i></i></button>
+  </div>
+</header>
+<div class="wrap crumb">~ / formula &middot; smks</div>
+
+<main class="wrap">
+
+<section>
+  <p class="eyebrow">// SELF-MAINTAINING_KNOWLEDGE_SYSTEM</p>
+  <h1>Your second brain works. Its admin doesn't.</h1>
+  <p class="lede">Five small tools your AI assistant (Claude Code, Codex, Gemini CLI, Cursor) builds around the notes you already have, so filing, merging, mapping and the weekly review run themselves.</p>
+  <p class="hero-meta">Obsidian &middot; Logseq &middot; any markdown folder &middot; bring your own AI</p>
+</section>
+
+<section>
+  <div class="news">
+    <div>
+      <p class="eyebrow">// WAITLIST</p>
+      <h2 style="font-size:22px">Launching soon. Hear first.</h2>
+      <p class="sub" style="margin:6px 0 0">One email when SMKS is out, with the founding-buyer offer. You also get the Formula newsletter; unsubscribe any time.</p>
+    </div>
+    <form id="newsletter-form" data-resource="smks-waitlist" data-source="smks-page" data-done="You're on the list.">
+      <input id="nl-email" type="email" name="email" placeholder="Email address" required>
+      <input id="nl-fname" type="text" name="fname" placeholder="First name">
+      <div aria-hidden="true" style="position:absolute;left:-5000px;"><input type="text" name="hp" tabindex="-1" autocomplete="off" value=""></div>
+      <button class="btn" type="submit">join the waitlist &rarr;</button>
+    </form>
+  </div>
+</section>
+
+<section>
+  <p class="eyebrow">// THE_FIVE_TOOLS</p>
+  <h2>Five small tools, built inside your vault</h2>
+  <p class="sub" style="max-width:560px;margin:0 0 24px">You paste a recipe; your assistant writes the tool. Each one lives in your notes folder and works on your files.</p>
+  <div class="tool"><b>01 &middot; INBOX SWEEPER</b><p>Files unprocessed daily notes into the notes they belong to, drafts the links, leaves you a five-minute review list.</p></div>
+  <div class="tool"><b>02 &middot; DUPLICATE MERGER</b><p>Finds the notes you wrote twice, proposes one merged note, never deletes anything.</p></div>
+  <div class="tool"><b>03 &middot; VAULT MAP</b><p>A home page that rebuilds itself from what&rsquo;s actually in your vault, orphans included.</p></div>
+  <div class="tool"><b>04 &middot; MEETING INTAKE</b><p>A photo of a handwritten page becomes a filed, linked meeting note.</p></div>
+  <div class="tool"><b>05 &middot; WEEKLY REVIEW RUNNER</b><p>Runs the other four in one command and writes the review note; you answer three questions.</p></div>
+</section>
+
+<section style="padding-bottom:8px">
+  <p class="foot">~ / formula &middot; smks &middot; <a href="/privacy">privacy</a> &middot; <a href="/terms">terms</a></p>
+</section>
+
+</main>
+
+<div class="toast" id="toast"></div>
+</body>
+</html>
