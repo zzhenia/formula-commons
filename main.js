@@ -49,16 +49,15 @@
     var mobileClose = document.getElementById('mobile-close');
 
     if (hamburger && mobileMenu) {
-      hamburger.addEventListener('click', function () {
-        mobileMenu.classList.add('open');
-        document.body.style.overflow = 'hidden';
-      });
-    }
-    if (mobileClose && mobileMenu) {
-      mobileClose.addEventListener('click', function () {
-        mobileMenu.classList.remove('open');
-        document.body.style.overflow = '';
-      });
+      var setMenu = function (open) {
+        mobileMenu.hidden = !open;
+        hamburger.setAttribute('aria-expanded', open ? 'true' : 'false');
+        document.body.style.overflow = open ? 'hidden' : '';
+      };
+      hamburger.addEventListener('click', function () { setMenu(mobileMenu.hidden); });
+      if (mobileClose) mobileClose.addEventListener('click', function () { setMenu(false); });
+      document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && !mobileMenu.hidden) setMenu(false); });
+      window.addEventListener('resize', function () { if (window.innerWidth > 768) setMenu(false); });
     }
 
     // --- Email Gate Modal ---
