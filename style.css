@@ -355,6 +355,7 @@ body {
 }
 .how-to-step {
   display: flex;
+  align-items: baseline;
   gap: 11px;
   margin-bottom: 11px;
 }
