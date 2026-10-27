@@ -58,7 +58,7 @@
   .ps-field input { flex: 0; width: 0; opacity: 0; font-size: 16px; }
   .ps.ps-open .ps-field { justify-content: flex-start; padding: 0 12px; }
   .ps.ps-open .ps-field input { flex: 1; opacity: 1; }
-  .ps-active .fh-left, .ps-active .zv-header .logo { display: none; }
+  .ps-active .fh-left, .zv-header.ps-active .logo { display: none; }
   .ps-active .fh-right > :not(.ps), .ps-active .zv-header-right > :not(.ps) { display: none; }
   .ps-results { position: fixed; top: 68px; left: 12px; right: 12px; min-width: 0; }
 }
