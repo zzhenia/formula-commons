@@ -1,0 +1,10 @@
+{
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "search": "node scripts/build-search.mjs . https://formulacommons.com pagefind https://blog.formulacommons.com/sitemap-posts.xml https://blog.formulacommons.com/sitemap-pages.xml"
+  },
+  "devDependencies": {
+    "pagefind": "1.5.2"
+  }
+}

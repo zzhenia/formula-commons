@@ -1,4 +1,4 @@
-/* Formula header: theme switch, mobile menu, Cmd/Ctrl+K search.
+/* Formula header: theme switch, mobile menu, and the search box (search.js, loaded below).
    Shared by formulacommons.com and blog.formulacommons.com. The theme is kept in a
    .formulacommons.com cookie so the choice carries across both sites. */
 (function () {
@@ -31,19 +31,14 @@
       document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && !menu.hidden) setMenu(false); });
       window.addEventListener('resize', function () { if (window.innerWidth > 860) setMenu(false); });
     }
+  }
 
-    // On the blog, Ghost's own search opens from [data-ghost-search]; don't follow the link.
-    var search = document.querySelector('.fh-search');
-    if (search && location.hostname.indexOf('blog.') === 0) {
-      search.addEventListener('click', function (e) { e.preventDefault(); });
-    }
-
-    document.addEventListener('keydown', function (e) {
-      if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 'k') {
-        var s = document.querySelector('.fh-search');
-        if (s) { e.preventDefault(); s.click(); }
-      }
-    });
+  // search.js sits next to this file and carries the same ?v= stamp.
+  var self = document.currentScript && document.currentScript.src;
+  if (self) {
+    var s = document.createElement('script');
+    s.src = self.replace(/header\.js/, 'search.js');
+    document.head.appendChild(s);
   }
 
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);

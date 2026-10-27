@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Stamp the shared header into every Formula page.
 
-Source of truth: _partials/header.html (markup), header.css, header.js.
+Source of truth: _partials/header.html (markup), header.css, header.js, search.css, search.js.
 Targets:
   - every *.html under this repo, between <!-- fh:head --> / <!-- fh:header --> markers
   - the Ghost theme (blog) partials fh-head.hbs and fh-header.hbs, if the theme folder exists
@@ -22,7 +22,7 @@ ACTIVE = {"index.html": "resources", "newsletter/index.html": "newsletter", "abo
 
 def version():
     h = hashlib.sha1()
-    for name in ("header.css", "header.js"):
+    for name in ("header.css", "header.js", "search.css", "search.js"):
         h.update((ROOT / name).read_bytes())
     return h.hexdigest()[:8]
 

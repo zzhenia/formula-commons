@@ -1,0 +1,40 @@
+# Rebuilds the Pagefind index (pagefind/) for formulacommons.com and the Ghost blog:
+# daily for new blog posts, and on every push that changes a page. Commits the index
+# when it changed; Cloudflare Pages deploys the commit. GitHub emails the repo owner
+# when a run fails.
+name: Search index
+
+on:
+  schedule:
+    - cron: "0 12 * * *"   # 07:00 Bogotá, after the 06:00 daily post
+  push:
+    branches: [main]
+    paths-ignore: ["pagefind/**"]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: search-index
+  cancel-in-progress: false
+
+jobs:
+  index:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm ci
+      - run: npm run search
+      - name: Commit index if it changed
+        run: |
+          git add -A pagefind
+          if git diff --cached --quiet; then echo "index unchanged"; exit 0; fi
+          git config user.name "search-index"
+          git config user.email "search-index@users.noreply.github.com"
+          git commit -m "Search index: $(date -u +%y%m%d)"
+          git pull --rebase
+          git push

@@ -1,0 +1,64 @@
+/* Search box shared by formulacommons.com, the blog and zheniavasiliev.com (see search.js).
+   Uses the Formula tokens every site already defines. While typing, the box takes the
+   navigation's width: the header gets .ps-active, which hides the nav. */
+
+.ps { position: relative; display: flex; }
+.ps-field {
+  display: flex; align-items: center; gap: 7px; width: 168px; height: 34px;
+  padding: 0 9px; border: 1px solid var(--cardb); border-radius: 3px;
+  background: var(--card); color: var(--faint); cursor: text;
+  transition: border-color .2s ease, width .2s ease;
+}
+.ps-field:hover, .ps-field:focus-within { border-color: var(--ac); }
+.ps-field svg { flex: none; }
+.ps-field input {
+  flex: 1; min-width: 0; height: 100%; border: 0; outline: 0; padding: 0; background: none;
+  font: 400 12px/1 'Spline Sans Mono', monospace; letter-spacing: .02em; color: var(--hd);
+  -webkit-appearance: none; appearance: none;
+}
+.ps-field input::placeholder { color: var(--faint); }
+.ps-field input::-webkit-search-cancel-button { display: none; }
+.ps-field kbd {
+  border: 1px solid var(--cardb); border-radius: 2px; padding: 1px 5px;
+  font: 400 11px/1.3 'Spline Sans Mono', monospace; color: var(--mut); background: none;
+}
+
+/* Expanded: the box fills the space the nav used */
+.ps-active .fh-nav, .ps-active .zv-nav { display: none; }
+.ps-active .fh-right, .ps-active .zv-header-right { flex: 1; }
+.ps.ps-open { flex: 1; }
+.ps.ps-open .ps-field { width: 100%; }
+.ps.ps-open kbd { display: none; }
+
+.ps-results {
+  position: absolute; top: calc(100% + 6px); left: 0; right: 0; min-width: 320px;
+  max-height: min(70vh, 560px); overflow-y: auto; z-index: 300;
+  background: var(--card); border: 1px solid var(--cardb); border-radius: 3px;
+  box-shadow: var(--shadow); padding: 6px;
+}
+.ps-results[hidden] { display: none; }
+.ps-results a {
+  display: grid; grid-template-columns: auto 1fr; gap: 3px 10px; align-items: baseline;
+  padding: 10px; border-radius: 3px; text-decoration: none; color: var(--tx);
+}
+.ps-results a:hover, .ps-results a.ps-on { background: var(--tint); }
+.ps-site {
+  grid-row: span 2; min-width: 52px;
+  font: 500 10px/1.4 'Spline Sans Mono', monospace; letter-spacing: .06em; text-transform: uppercase; color: var(--ac);
+}
+.ps-title { font: 600 14px/1.3 'Archivo', sans-serif; color: var(--hd); }
+.ps-excerpt { font: 400 13px/1.45 'Archivo', sans-serif; color: var(--mut); }
+.ps-excerpt mark { background: none; color: var(--hd); font-weight: 600; }
+.ps-empty { margin: 0; padding: 12px 10px; font: 400 13px/1.4 'Archivo', sans-serif; color: var(--mut); }
+
+/* Phones: an icon until tapped, then the box spans the header */
+@media (max-width: 860px) {
+  .ps-field { width: 44px; height: 44px; padding: 0; justify-content: center; }
+  .ps-field kbd { display: none; }
+  .ps-field input { flex: 0; width: 0; opacity: 0; font-size: 16px; }
+  .ps.ps-open .ps-field { justify-content: flex-start; padding: 0 12px; }
+  .ps.ps-open .ps-field input { flex: 1; opacity: 1; }
+  .ps-active .fh-left, .ps-active .zv-header .logo { display: none; }
+  .ps-active .fh-right > :not(.ps), .ps-active .zv-header-right > :not(.ps) { display: none; }
+  .ps-results { position: fixed; top: 68px; left: 12px; right: 12px; min-width: 0; }
+}
