@@ -1,0 +1,8 @@
+#!/bin/sh
+# Keep every page's header identical to _partials/header.html (see scripts/sync-header.py).
+cd "$(git rev-parse --show-toplevel)" || exit 1
+changed=$(python3 scripts/sync-header.py) || exit 1
+site=$(echo "$changed" | grep -v '/ZV-Bench/')
+[ -n "$site" ] && echo "$site" | xargs git add --
+echo "$changed" | grep -q '/ZV-Bench/' && echo "header synced into the blog theme: re-upload formula-ink (ZV-Bench ghost-blog)" >&2
+exit 0

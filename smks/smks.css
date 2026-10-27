@@ -27,17 +27,6 @@ a{color:var(--ac);text-decoration:none}a:hover{opacity:.8}
 @media(max-width:768px){.wrap{padding:0 20px}}
 
 /* header */
-.hdr{position:sticky;top:0;z-index:10;backdrop-filter:blur(12px);background:var(--header-bg);border-bottom:1px solid var(--cardb)}
-.hdr .wrap{display:flex;align-items:center;gap:22px;height:54px}
-.mark{font:600 13px/1 'Spline Sans Mono',monospace;color:var(--hd)}
-.mark span{color:var(--ac)}
-.nav{display:flex;gap:18px;margin-left:auto}
-.nav a{font:500 12px/1 'Spline Sans Mono',monospace;color:var(--mut)}
-.nav a:hover{color:var(--hd);opacity:1}
-.nav a.on{color:var(--hd)}
-.tgl{margin-left:6px;width:40px;height:22px;border-radius:500px;background:var(--cardb);border:0;position:relative;cursor:pointer;transition:background .2s ease}
-.tgl i{position:absolute;top:3px;left:3px;width:16px;height:16px;border-radius:50%;background:#fff;box-shadow:0 1px 2px rgba(0,0,0,.2);transition:left .2s ease}
-[data-theme="dark"] .tgl i{left:21px;background:var(--ac);box-shadow:0 0 6px var(--ac)}
 .crumb{font:400 11px/1 'Spline Sans Mono',monospace;color:var(--faint);padding:10px 0}
 
 /* type */
@@ -108,18 +97,5 @@ section{padding:44px 0 0}
 .nl-ok{font:500 13px/1.5 'Spline Sans Mono',monospace;color:var(--ac);margin:0}
 .toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%) translateY(20px);background:var(--hd);color:var(--bg);font:500 12px/1 'Spline Sans Mono',monospace;padding:12px 18px;border-radius:4px;opacity:0;pointer-events:none;transition:opacity .2s,transform .2s;z-index:20}
 .toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
-@media(max-width:480px){.nav{gap:12px}.nav a{font-size:11px}}
 @media(max-width:760px){.getneed{grid-template-columns:1fr!important;gap:32px!important}}
 
-/* Log in → YT Autopilot */
-.login-link {
-  font: 400 11px/1 'Spline Sans Mono', monospace;
-  color: var(--mut);
-  text-decoration: none;
-  border: 1px solid var(--cardb);
-  border-radius: 4px;
-  padding: 6px 9px;
-  background: var(--card);
-  transition: color .15s ease, border-color .2s ease;
-}
-.login-link:hover { color: var(--ac); border-color: var(--ac); }
