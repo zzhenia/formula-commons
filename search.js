@@ -19,8 +19,13 @@
       var own = location.hostname.replace(/^www\./, '') === 'zheniavasiliev.com';
       pf = import(own ? ZHENIA + 'pagefind.js' : FORMULA + 'pagefind.js').then(function (p) {
         return p.options({ excerptLength: 18 })
-          // If the other site's index can't load, still search this one.
-          .then(function () { return p.mergeIndex(own ? FORMULA : ZHENIA).catch(function () {}); })
+          // Merge the other site's index only if it loads; a broken merge breaks every search.
+          .then(function () {
+            var other = own ? FORMULA : ZHENIA;
+            return fetch(other + 'pagefind-entry.json').then(function (r) {
+              if (r.ok) return p.mergeIndex(other);
+            }).catch(function () {});
+          })
           .then(function () { return p; });
       });
     }
