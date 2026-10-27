@@ -28,6 +28,9 @@ jobs:
         with:
           node-version: 22
       - run: npm ci
+      # Cloudflare's bot check blocks GitHub's runners, so reach the Ghost server directly.
+      - name: Route the blog to its server
+        run: echo "${{ secrets.BLOG_ORIGIN_IP }} blog.formulacommons.com" | sudo tee -a /etc/hosts > /dev/null
       - run: npm run search
       - name: Commit index if it changed
         run: |
