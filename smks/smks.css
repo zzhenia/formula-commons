@@ -6,10 +6,10 @@
 --bg0:rgba(246,248,251,0);
 }
 [data-theme="dark"]{
---bg:#11141c;--card:#181c26;--cardb:#2b313d;--tx:#c4ccd8;--mut:#8a93a3;--faint:#5b6473;--hd:#f1f4f8;
---ac:#6cffb1;--mint:#6cffb1;--tint:#1a1f2a;
---input-bg:#14171f;--header-bg:rgba(17,20,28,.55);--thumb-bg:#20242e;
---dot-color:rgba(150,165,195,.12);
+--bg:#13151a;--card:#1b1d24;--cardb:#37342f;--tx:#c8c2b9;--mut:#a69e91;--faint:#625e5b;--hd:#ccc7c0;
+--ac:#6cffb1;--mint:#6cffb1;--tint:#152121;
+--input-bg:#15171d;--header-bg:rgba(19,21,26,.55);--thumb-bg:#22232a;
+--dot-color:rgba(166,158,145,.12);
 --bg0:rgba(17,20,28,0);
 }
 *{box-sizing:border-box}

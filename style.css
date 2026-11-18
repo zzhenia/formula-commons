@@ -38,26 +38,26 @@ input { font-family: inherit; }
 }
 
 [data-theme="dark"] {
-  --bg: #11141c;
-  --card: #181c26;
-  --cardb: #2b313d;
-  --tx: #c4ccd8;
-  --mut: #8a93a3;
-  --faint: #5b6473;
-  --hd: #f1f4f8;
+  --bg: #13151a;
+  --card: #1b1d24;
+  --cardb: #37342f;
+  --tx: #c8c2b9;
+  --mut: #a69e91;
+  --faint: #625e5b;
+  --hd: #ccc7c0;
   --ac: #6cffb1;
   --mint: #6cffb1;
-  --tint: #1a1f2a;
-  --input-bg: #14171f;
-  --header-bg: rgba(17,20,28,.55);
-  --thumb-bg: #20242e;
+  --tint: #152121;
+  --input-bg: #15171d;
+  --header-bg: rgba(19,21,26,.55);
+  --thumb-bg: #22232a;
   --code-bg: #020a1f;
   --code-tx: #6cffb1;
   --toggle-track: #222734;
   --toggle-knob: var(--ac);
   --toggle-shadow: 0 0 6px var(--ac);
   --shadow: 0 8px 30px rgba(0,0,0,.4);
-  --dot-color: rgba(150,165,195,.12);
+  --dot-color: rgba(166,158,145,.12);
   --overlay: rgba(0,0,0,.55);
 }
 
