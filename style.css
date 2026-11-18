@@ -101,6 +101,35 @@ body {
 }
 
 /* --- Hero --- */
+/* --- Bench template banner --- */
+.bench-banner {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin: 24px 0 0;
+  padding: 14px 18px;
+  background: var(--tint);
+  border: 1px solid var(--cardb);
+  border-left: 3px solid var(--ac);
+  border-radius: 10px;
+  color: var(--hd);
+  text-decoration: none;
+  transition: border-color .15s;
+}
+.bench-banner:hover { border-color: var(--ac); }
+.bench-banner-tag {
+  font: 500 12px/1 'Spline Sans Mono', monospace;
+  letter-spacing: .04em;
+  color: var(--ac);
+  white-space: nowrap;
+}
+.bench-banner-text { font-weight: 600; flex: 1; }
+.bench-banner-arrow { color: var(--ac); font-weight: 700; }
+@media (max-width: 768px) {
+  .bench-banner { flex-wrap: wrap; gap: 6px 10px; }
+  .bench-banner-tag { width: 100%; }
+}
+
 .hero {
   padding: 48px 0 8px;
 }
