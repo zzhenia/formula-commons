@@ -16,7 +16,7 @@ ROOT = Path(__file__).resolve().parent.parent
 THEME = ROOT.parent / "ZV-Bench/tools/on-demand/ghost-blog/theme/formula-ink/partials"
 SITE = "https://formulacommons.com"
 # GA4 Measurement ID (G-...). Empty = no analytics tag on any page or the blog.
-GA_ID = ""
+GA_ID = "G-TFSYBWJ1NR"
 
 # Which nav item is active, by page path. Pages not listed show no active item.
 ACTIVE = {"index.html": "resources", "newsletter/index.html": "newsletter", "about/index.html": "about"}
