@@ -15,6 +15,8 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 THEME = ROOT.parent / "ZV-Bench/tools/on-demand/ghost-blog/theme/formula-ink/partials"
 SITE = "https://formulacommons.com"
+# GA4 Measurement ID (G-...). Empty = no analytics tag on any page or the blog.
+GA_ID = ""
 
 # Which nav item is active, by page path. Pages not listed show no active item.
 ACTIVE = {"index.html": "resources", "newsletter/index.html": "newsletter", "about/index.html": "about"}
@@ -35,8 +37,13 @@ def render_header(site, active):
 
 
 def render_head(site, v):
-    return (f'<link rel="stylesheet" href="{site}/header.css?v={v}">\n'
+    head = (f'<link rel="stylesheet" href="{site}/header.css?v={v}">\n'
             f'<script src="{site}/header.js?v={v}" defer></script>')
+    if GA_ID:
+        head += (f'\n<script async src="https://www.googletagmanager.com/gtag/js?id={GA_ID}"></script>\n'
+                 f"<script>window.dataLayer=window.dataLayer||[];function gtag(){{dataLayer.push(arguments);}}"
+                 f"gtag('js',new Date());gtag('config','{GA_ID}');</script>")
+    return head
 
 
 def replace_block(text, name, content):
