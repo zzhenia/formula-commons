@@ -90,3 +90,8 @@
   .fh-btn, .fh-icon { height: 44px; min-width: 44px; }
   .fh-subscribe { height: 44px; }
 }
+
+/* Shared footer strip (Discord): _partials/footer.html, stamped by sync-header.py */
+.fh-footer { display: flex; justify-content: center; padding: 28px 20px 36px; border-top: 1px solid var(--cardb); margin-top: 40px; }
+.fh-discord { display: inline-flex; align-items: center; gap: 10px; font: 500 12px/1 'Spline Sans Mono', monospace; letter-spacing: .02em; color: var(--mut); text-decoration: none; transition: color .15s ease; }
+.fh-discord:hover { color: var(--hd); }

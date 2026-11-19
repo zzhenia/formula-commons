@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Stamp the shared header into every Formula page.
 
-Source of truth: _partials/header.html (markup), header.css, header.js, search.css, search.js.
+Source of truth: _partials/header.html + footer.html (markup), header.css, header.js, search.css, search.js.
 Targets:
   - every *.html under this repo, between <!-- fh:head --> / <!-- fh:header --> markers
   - the Ghost theme (blog) partials fh-head.hbs and fh-header.hbs, if the theme folder exists
@@ -34,6 +34,10 @@ def render_header(site, active):
     if active:
         html = html.replace(f'data-nav="{active}" ', f'data-nav="{active}" class="active" aria-current="page" ')
     return html
+
+
+def render_footer(site):
+    return (ROOT / "_partials/footer.html").read_text(encoding="utf-8").replace("{{site}}", site).rstrip("\n")
 
 
 def render_head(site, v):
@@ -70,6 +74,7 @@ def main():
         text = page.read_text(encoding="utf-8")
         out = replace_block(text, "head", render_head("", v))
         out = out and replace_block(out, "header", render_header("", ACTIVE.get(rel)))
+        out = out and replace_block(out, "footer", render_footer(""))
         if out is None:
             missing.append(rel)
             continue
@@ -78,6 +83,7 @@ def main():
     if THEME.is_dir():
         write_if_changed(THEME / "fh-head.hbs", render_head(SITE, v) + "\n", changed)
         write_if_changed(THEME / "fh-header.hbs", render_header(SITE, "blog") + "\n", changed)
+        write_if_changed(THEME / "fh-footer.hbs", render_footer(SITE) + "\n", changed)
 
     for p in changed:
         print(p)
