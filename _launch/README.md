@@ -1,1 +1,1 @@
-Pages finished but not yet live. `smks/index.html` here is the SMKS sales page; on launch day it replaces `/smks/index.html` (which is the waitlist page until then). Not linked from anywhere, but Cloudflare Pages does serve this folder.
+Pages finished but not yet live. `bench-pro/index.html` here is the Bench Pro sales page; on launch day it replaces `/bench-pro/index.html` (which is the waitlist page until then). Not linked from anywhere, but Cloudflare Pages does serve this folder.
