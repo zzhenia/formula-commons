@@ -234,7 +234,7 @@
     }
     window.onTurnstileLoad = function () {
       turnstileMount(document.getElementById('gate-form'));
-      turnstileMount(document.getElementById('newsletter-form'));
+      Array.prototype.forEach.call(document.querySelectorAll('#newsletter-form, form[data-nl]'), turnstileMount);
     };
     if (window.turnstile) window.onTurnstileLoad();
     function honeypot(form) {
@@ -242,16 +242,16 @@
       return hp ? hp.value : '';
     }
 
-    // --- Newsletter Form ---
-    var nlForm = document.getElementById('newsletter-form');
-    if (nlForm) {
+    // --- Newsletter Forms --- (#newsletter-form, plus any form[data-nl] with its own id)
+    Array.prototype.forEach.call(document.querySelectorAll('#newsletter-form, form[data-nl]'), function (nlForm) {
       nlForm.addEventListener('submit', function (e) {
         e.preventDefault();
 
-        var email = document.getElementById('nl-email').value.trim();
+        var email = nlForm.querySelector('input[type="email"]').value.trim();
         if (!email) return;
 
-        var firstName = document.getElementById('nl-fname').value.trim();
+        var fname = nlForm.querySelector('input[name="fname"], #nl-fname');
+        var firstName = fname ? fname.value.trim() : '';
 
         var hp = honeypot(nlForm);
         turnstileToken(nlForm).then(function (token) {
@@ -273,7 +273,7 @@
         });
         nlForm.insertAdjacentHTML('beforeend', '<p style="color:var(--accent);font-weight:600;">' + (nlForm.getAttribute('data-done') || 'You\'re subscribed!') + '</p>');
       });
-    }
+    });
 
     // --- Accordion Toggle ---
     window.toggleAccordion = function (header) {

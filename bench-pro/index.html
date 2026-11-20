@@ -11,10 +11,10 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,400..800;1,400..800&family=Spline+Sans+Mono:wght@400..700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/bench-pro/bench-pro.css?v=7">
+<link rel="stylesheet" href="/bench-pro/bench-pro.css?v=8">
 <script>try{if((document.cookie.match(/fc-theme=(dark|light)/)||[])[1]==='dark'||localStorage.getItem('formula-theme')==='dark')document.documentElement.setAttribute('data-theme','dark')}catch(e){}</script>
 <script src="https://challenges.cloudflare.com/turnstile/v0/api.js?onload=onTurnstileLoad" async defer></script>
-<script src="/main.js?v=9"></script>
+<script src="/main.js?v=10"></script>
 <!-- fh:head -->
 <link rel="stylesheet" href="/header.css?v=69fcdce4">
 <script src="/header.js?v=69fcdce4" defer></script>
@@ -95,24 +95,27 @@
       <li>A research space for sources, notes and drafts</li>
       <li>Memory that follows you across projects</li>
     </ul>
-    <div class="plan-foot">
-      <a class="btn" href="#waitlist">Join the waitlist &darr;</a>
-    </div>
+    <form class="plan-form" id="newsletter-form" data-resource="bench-pro-waitlist" data-source="bench-pro-page" data-done="You're on the list. Check your inbox.">
+      <input id="nl-email" type="email" name="email" placeholder="Email address" required aria-label="Email address">
+      <div aria-hidden="true" style="position:absolute;left:-5000px;"><input type="text" name="hp" tabindex="-1" autocomplete="off" value=""></div>
+      <button class="btn" type="submit">Join the waitlist &rarr;</button>
+      <p class="plan-note">No spam. Unsubscribe any time.</p>
+    </form>
   </div>
 </section>
 
-<section id="waitlist" style="padding-bottom:8px">
-  <div class="news">
+<section style="padding-bottom:8px">
+  <div class="nl-band">
     <div>
-      <p class="eyebrow">// WAITLIST</p>
-      <h2 style="font-size:22px">Hear first when Bench Pro opens</h2>
-      <p class="sub" style="margin:6px 0 0">One email when it launches. You also get the Formula newsletter; unsubscribe any time.</p>
+      <p class="nl-eyebrow">// NEWSLETTER</p>
+      <h2>Formula, in your inbox</h2>
+      <p>New tools, templates and videos as they ship. No spam. Unsubscribe any time.</p>
     </div>
-    <form id="newsletter-form" data-resource="bench-pro-waitlist" data-source="bench-pro-page" data-done="You're on the list.">
-      <input id="nl-email" type="email" name="email" placeholder="Email address" required>
-      <input id="nl-fname" type="hidden" name="fname" value="">
+    <form id="nl-band-form" data-nl data-done="You're subscribed!">
+      <input type="email" name="email" placeholder="Email address" required aria-label="Email address">
+      <input type="text" name="fname" placeholder="First name" aria-label="First name">
       <div aria-hidden="true" style="position:absolute;left:-5000px;"><input type="text" name="hp" tabindex="-1" autocomplete="off" value=""></div>
-      <button class="btn" type="submit">Join the waitlist &rarr;</button>
+      <button class="btn" type="submit">Subscribe &rarr;</button>
     </form>
   </div>
   <p class="foot">~ / formula &middot; bench pro &middot; <a href="/privacy">privacy</a> &middot; <a href="/terms">terms</a></p>
