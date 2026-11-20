@@ -91,45 +91,67 @@ body {
   padding: 0 28px;
 }
 
-/* --- Breadcrumb --- */
-.breadcrumb {
-  padding: 9px 28px;
-  border-bottom: 1px solid var(--cardb);
-  background: var(--bg);
-  font: 400 11px/1 'Spline Sans Mono', monospace;
-  color: var(--faint);
+/* --- Bench Pro banner (animated by bench-banner.js) --- */
+.bp-banner {
+  display: block;
+  margin: 24px 0 0;
+  border-radius: 10px;
+  border: 1px solid rgba(255,255,255,.06);
+  color: #fff;
+  text-decoration: none;
+  background:
+    radial-gradient(rgba(255,255,255,.09) 1.1px, transparent 1.3px) 0 0 / 12px 12px,
+    linear-gradient(120deg, #0b1a3d 0%, #081230 55%, #12285a 100%);
+  overflow: hidden;
+  transition: border-color .15s;
+}
+[data-theme="dark"] .bp-banner { border-color: var(--cardb); }
+.bp-banner:hover { border-color: var(--mint); }
+.bp-in {
+  display: grid;
+  grid-template-columns: minmax(0, auto) minmax(0, 420px);
+  justify-content: space-between;
+  align-items: end;
+  gap: 18px 48px;
+  padding: 26px 32px 28px;
+}
+.bp-in p { margin: 0; }
+.bp-logo { font: 500 12px/1 'Spline Sans Mono', monospace; letter-spacing: .04em; color: rgba(255,255,255,.8); margin-bottom: 16px !important; }
+.bp-diamond { color: var(--mint); }
+.bp-title { font: 800 46px/1 'Archivo', sans-serif; letter-spacing: .005em; color: #fff; white-space: nowrap; }
+.bp-pro {
+  display: inline-block;
+  margin-left: 12px;
+  padding: 5px 8px 4px;
+  border-radius: 4px;
+  background: var(--mint);
+  color: #0b1a3d;
+  font: 700 14px/1 'Spline Sans Mono', monospace;
+  letter-spacing: .08em;
+  vertical-align: 9px;
+}
+.bp-slogan { font: 600 17px/1 'Spline Sans Mono', monospace; letter-spacing: .16em; margin-top: 14px !important; white-space: nowrap; }
+.bp-clear { color: #fff; }
+.bp-thinking { color: var(--mint); }
+.bp-line { font: 400 15px/1.5 'Archivo', sans-serif; color: rgba(255,255,255,.78); }
+.bp-ghost { visibility: hidden; }
+.bp-hide { visibility: hidden; }
+.bp-caret { position: relative; animation: bp-blink 1s steps(1) infinite; }
+.bp-caret::before { content: ""; position: absolute; left: 3px; bottom: -.1em; width: .5em; height: 1em; background: var(--mint); }
+@keyframes bp-blink { 50% { opacity: 0; } }
+@media (max-width: 768px) {
+  .bp-in { grid-template-columns: 1fr; padding: 22px 20px 24px; }
+  .bp-title { font-size: 38px; }
+  .bp-slogan { font-size: 15px; }
+  .bp-line { font-size: 14px; }
+}
+@media (max-width: 390px) {
+  .bp-title { font-size: 34px; }
+  .bp-pro { margin-left: 8px; font-size: 12px; vertical-align: 7px; }
+  .bp-slogan { font-size: 14px; letter-spacing: .12em; }
 }
 
 /* --- Hero --- */
-/* --- Bench template banner --- */
-.bench-banner {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  margin: 24px 0 0;
-  padding: 14px 18px;
-  background: var(--tint);
-  border: 1px solid var(--cardb);
-  border-left: 3px solid var(--ac);
-  border-radius: 10px;
-  color: var(--hd);
-  text-decoration: none;
-  transition: border-color .15s;
-}
-.bench-banner:hover { border-color: var(--ac); }
-.bench-banner-tag {
-  font: 500 12px/1 'Spline Sans Mono', monospace;
-  letter-spacing: .04em;
-  color: var(--ac);
-  white-space: nowrap;
-}
-.bench-banner-text { font-weight: 600; flex: 1; }
-.bench-banner-arrow { color: var(--ac); font-weight: 700; }
-@media (max-width: 768px) {
-  .bench-banner { flex-wrap: wrap; gap: 6px 10px; }
-  .bench-banner-tag { width: 100%; }
-}
-
 .hero {
   padding: 48px 0 8px;
 }
@@ -740,7 +762,6 @@ pre.formula-code {
 
 /* --- Responsive --- */
 @media (max-width: 768px) {
-  .breadcrumb { padding: 9px 20px; }
   .page-wrap { padding: 0 20px; }
 
   .hero-title { font-size: 32px; }
@@ -777,6 +798,5 @@ pre.formula-code {
 @media (max-width: 390px) {
   .hero-title { font-size: 28px; }
   .page-wrap { padding: 0 16px; }
-  .breadcrumb { padding: 9px 16px; }
 }
 

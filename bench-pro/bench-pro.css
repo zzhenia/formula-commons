@@ -99,3 +99,19 @@ section{padding:44px 0 0}
 .toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
 @media(max-width:760px){.getneed{grid-template-columns:1fr!important;gap:32px!important}}
 
+
+/* plans (Bench Pro waitlist page) */
+.plans{display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid var(--cardb);background:var(--card);margin-top:36px;padding:0}
+.plan{display:flex;flex-direction:column;padding:30px 30px 28px}
+.plan+.plan{border-left:1px solid var(--cardb)}
+.plan-pro{background:var(--tint)}
+.plan-name{font:600 12px/1 'Spline Sans Mono',monospace;letter-spacing:.1em;text-transform:uppercase;color:var(--ac);margin:0 0 14px}
+.plan-price{font:800 34px/1 'Archivo',sans-serif;color:var(--hd);margin:0 0 10px}
+.plan-sub{color:var(--mut);margin:0 0 18px}
+.plan-list{list-style:none;margin:0 0 26px;padding:0;flex:1}
+.plan-list li{border-top:1px solid var(--cardb);padding:10px 0 10px 22px;position:relative;font-size:14px;color:var(--tx)}
+.plan-list li::before{content:"\25C6";position:absolute;left:0;top:11px;font-size:10px;color:var(--ac)}
+.plan-foot{display:flex;flex-wrap:wrap;align-items:center;gap:14px 20px}
+.plan-video{font:500 12px/1.4 'Spline Sans Mono',monospace}
+.btn-line{background:transparent;color:var(--hd);box-shadow:inset 0 0 0 1px var(--hd)}
+@media(max-width:760px){.plans{grid-template-columns:1fr}.plan+.plan{border-left:0;border-top:1px solid var(--cardb)}.plan{padding:24px 20px}}
