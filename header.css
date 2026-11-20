@@ -12,12 +12,12 @@
 }
 .fh-left { display: flex; align-items: center; gap: 12px; }
 .fh-logo { display: flex; align-items: center; gap: 9px; text-decoration: none; }
-.fh-diamond { font: 700 13px/1 'Spline Sans Mono', monospace; color: var(--ac); }
+.fh-diamond { font: 700 13px/1 'Spline Sans Mono', monospace; color: var(--ac); position: relative; top: -1px; }
 .fh-name { font: 600 13px/1 'Spline Sans Mono', monospace; color: var(--hd); }
 .fh-tagline {
   font: 400 11px/1 'Spline Sans Mono', monospace; letter-spacing: .02em;
-  color: var(--mut); padding-left: 12px; border-left: 2px solid var(--faint); white-space: nowrap;
-  position: relative; top: 3px;
+  color: var(--mut); padding-left: 12px; border-left: 1.4px solid var(--faint); white-space: nowrap;
+  position: relative; top: 1px;
 }
 
 .fh-nav { display: flex; gap: 24px; align-items: center; }

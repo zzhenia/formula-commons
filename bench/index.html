@@ -11,13 +11,13 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,400..800;1,400..800&family=Spline+Sans+Mono:wght@400..700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/bench/bench.css?v=10">
+<link rel="stylesheet" href="/bench/bench.css?v=11">
 <script>try{if((document.cookie.match(/fc-theme=(dark|light)/)||[])[1]==='dark'||localStorage.getItem('formula-theme')==='dark')document.documentElement.setAttribute('data-theme','dark')}catch(e){}</script>
 <script src="https://challenges.cloudflare.com/turnstile/v0/api.js?onload=onTurnstileLoad" async defer></script>
 <script src="/main.js?v=11"></script>
 <!-- fh:head -->
-<link rel="stylesheet" href="/header.css?v=782db678">
-<script src="/header.js?v=782db678" defer></script>
+<link rel="stylesheet" href="/header.css?v=a882e144">
+<script src="/header.js?v=a882e144" defer></script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-TFSYBWJ1NR"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-TFSYBWJ1NR');</script>
 <!-- /fh:head -->
@@ -66,9 +66,10 @@
 </section>
 
 <section class="plans">
+ <div class="plans-col">
   <div class="plan">
-    <p class="plan-name">The Bench</p>
-    <p class="plan-price">Free</p>
+    <p class="plan-name">Free</p>
+    <h2 class="plan-price">The Bench</h2>
     <p class="plan-sub">A template repo you run with your own AI.</p>
     <ul class="plan-list">
       <li><svg class="ck" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9.5"/><path d="M8 12.3l2.7 2.7L16 9.6"/></svg><span>Works with Claude Code or Codex, no limits</span></li>
@@ -80,11 +81,10 @@
       <li><svg class="ck" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9.5"/><path d="M8 12.3l2.7 2.7L16 9.6"/></svg><span>A local dashboard of the tools you build</span></li>
       <li><svg class="ck" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9.5"/><path d="M8 12.3l2.7 2.7L16 9.6"/></svg><span>Optional Jira or Asana links</span></li>
     </ul>
-    <a class="plan-video" href="https://www.youtube.com/watch?v=1CH6nqn_J7M" target="_blank" rel="noopener">&#9654; Watch the onboarding video</a>
   </div>
   <div class="plan plan-pro">
-    <p class="plan-name">Bench Pro</p>
-    <p class="plan-price">Waitlist open</p>
+    <p class="plan-name">Waitlist open</p>
+    <h2 class="plan-price">Bench Pro</h2>
     <p class="plan-sub">Everything in The Bench, plus</p>
     <ul class="plan-list">
       <li><svg class="ck" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9.5"/><path d="M8 12.3l2.7 2.7L16 9.6"/></svg><span>A browser app, nothing to install</span></li>
@@ -93,6 +93,9 @@
       <li><svg class="ck" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9.5"/><path d="M8 12.3l2.7 2.7L16 9.6"/></svg><span>Memory that follows you across projects</span></li>
     </ul>
   </div>
+ </div>
+ <div class="plans-col plans-side">
+  <div class="video"><iframe src="https://www.youtube-nocookie.com/embed/1CH6nqn_J7M?rel=0" title="The Bench onboarding video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy"></iframe></div>
   <form class="access" id="bench-form">
     <label class="access-q" for="bench-email">Where should we send your GitHub link?</label>
     <input id="bench-email" type="email" name="email" placeholder="you@example.com" required autocomplete="email">
@@ -105,6 +108,7 @@
     <p class="access-q">You&rsquo;re in.</p>
     <a class="btn access-btn" href="https://github.com/zzhenia/bench-template" target="_blank" rel="noopener">Open on GitHub &rarr;</a>
   </div>
+ </div>
 </section>
 
 <section style="padding-bottom:8px">

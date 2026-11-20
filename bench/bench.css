@@ -101,11 +101,15 @@ section{padding:44px 0 0}
 
 
 /* plans: free + Pro side by side, one signup form under both */
-.plans{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:36px;padding:0}
+.plans{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:36px;padding:0;align-items:start}
+.plans-col{display:grid;gap:16px}
+.plans-side{position:sticky;top:76px}
+.video{aspect-ratio:16/9;border-radius:10px;overflow:hidden;background:#000}
+.video iframe{display:block;width:100%;height:100%;border:0}
 .plan{display:flex;flex-direction:column;padding:30px 30px 28px;background:var(--card);border-radius:10px}
 .plan-pro{color:#fff;background:radial-gradient(rgba(255,255,255,.09) 1.1px,transparent 1.3px) 0 0/12px 12px,linear-gradient(120deg,#0b1a3d 0%,#081230 55%,#12285a 100%)}
 .plan-name{font:600 12px/1 'Spline Sans Mono',monospace;letter-spacing:.1em;text-transform:uppercase;color:var(--ac);margin:0 0 14px}
-.plan-price{font:800 34px/1 'Archivo',sans-serif;color:var(--hd);margin:0 0 10px}
+.plan-price{font:800 34px/1.05 'Archivo',sans-serif;letter-spacing:.01em;color:var(--hd);margin:0 0 10px}
 .plan-sub{color:var(--mut);margin:0 0 18px}
 .plan-pro .plan-name{color:var(--mint)}
 .plan-pro .plan-price{color:#fff}
@@ -114,8 +118,7 @@ section{padding:44px 0 0}
 .plan-list li{display:flex;gap:12px;align-items:flex-start;font-size:15px;line-height:1.45;color:var(--tx)}
 .plan-list .ck{flex:none;color:var(--ac);margin-top:0}
 .plan-pro .plan-list .ck{color:var(--mint)}
-.plan-video{font:500 12px/1.4 'Spline Sans Mono',monospace}
-.access{grid-column:1/-1;background:var(--card);border-radius:10px;padding:28px 30px;display:grid;gap:12px}
+.access{background:var(--card);border-radius:10px;padding:28px 30px;display:grid;gap:12px}
 .access[hidden]{display:none}
 .access-q{font:700 17px/1.3 'Archivo',sans-serif;color:var(--hd);margin:0}
 .access input[type=email]{width:100%;font:400 15px/1 'Archivo',sans-serif;color:var(--hd);background:var(--input-bg);border:1px solid var(--cardb);border-radius:6px;padding:15px 16px;outline:0;transition:border-color .2s ease}
@@ -124,7 +127,7 @@ section{padding:44px 0 0}
 .access-tick input{width:18px;height:18px;margin:0;accent-color:var(--ac)}
 .access-btn{width:100%;text-align:center;text-transform:uppercase;letter-spacing:.06em;padding:17px 22px}
 .access-note{font-size:13px;color:var(--mut);margin:0}
-@media(max-width:760px){.plans{grid-template-columns:1fr}.plan,.access{padding:24px 20px}}
+@media(max-width:760px){.plans{grid-template-columns:1fr}.plans-side{position:static}.plan,.access{padding:24px 20px}}
 
 /* Email gate (same modal as the home page) */
 .modal-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.45);z-index:200;align-items:center;justify-content:center;padding:20px}
