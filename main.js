@@ -45,6 +45,7 @@
     var modalSuccessLink = document.getElementById('success-link');
     var closeModal = document.getElementById('modal-close');
     var currentResourceUrl = '';
+    var currentCta = 'Open template \u2192';
 
     // Cookie helpers — store list of unlocked resource slugs
     var GATE_KEY = 'formula-unlocked';
@@ -88,6 +89,7 @@
     window.openGate = function (slug, name, url, opts) {
       opts = opts || {};
       currentResourceUrl = url;
+      currentCta = (opts.cta || 'Open template') + ' \u2192';
 
       // Already subscribed: always show the success card with the link, for a
       // card click as much as a deep link. The old direct window.open looked
@@ -98,7 +100,7 @@
         if (modalSuccess) modalSuccess.style.display = 'block';
         if (modalSuccessLink) {
           modalSuccessLink.href = url;
-          modalSuccessLink.textContent = 'Open template →';
+          modalSuccessLink.textContent = currentCta;
         }
         if (modal) modal.classList.add('open');
         document.body.style.overflow = 'hidden';
@@ -124,10 +126,14 @@
     document.addEventListener('click', function (e) {
       var item = e.target.closest && e.target.closest('[data-gate]');
       if (!item) return;
+      // A gated <a> keeps its real href for crawlers and no-JS visitors;
+      // with JS the gate opens instead of following it.
+      if (item.tagName === 'A') e.preventDefault();
       window.openGate(
         item.getAttribute('data-slug'),
         item.getAttribute('data-name'),
-        item.getAttribute('data-url')
+        item.getAttribute('data-url'),
+        { cta: item.getAttribute('data-cta') }
       );
     });
 
@@ -180,7 +186,7 @@
         if (modalSuccess) modalSuccess.style.display = 'block';
         if (modalSuccessLink) {
           modalSuccessLink.href = currentResourceUrl;
-          modalSuccessLink.textContent = 'Open template \u2192';
+          modalSuccessLink.textContent = currentCta;
         }
       });
     }

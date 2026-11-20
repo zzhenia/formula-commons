@@ -134,3 +134,25 @@ background:radial-gradient(rgba(255,255,255,.09) 1.1px,transparent 1.3px) 0 0/12
 .nl-band input:focus{border-color:var(--mint)}
 .nl-band form p{color:var(--mint)!important}
 @media(max-width:700px){.nl-band{grid-template-columns:1fr;padding:24px 20px}}
+
+/* Email gate (same modal as the home page) */
+.modal-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.45);z-index:200;align-items:center;justify-content:center;padding:20px}
+[data-theme="dark"] .modal-overlay{background:rgba(0,0,0,.6)}
+.modal-overlay.open{display:flex}
+.modal-card{width:100%;max-width:460px;background:var(--card);border:1px solid var(--cardb);border-radius:8px;padding:30px;position:relative;animation:modalIn .2s ease}
+@keyframes modalIn{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+.modal-close{position:absolute;top:14px;right:14px;background:none;border:none;font:500 18px/1 'Spline Sans Mono',monospace;color:var(--faint);cursor:pointer;padding:4px 8px}
+.modal-close:hover{color:var(--hd)}
+.modal-label{font:600 11px/1 'Spline Sans Mono',monospace;letter-spacing:.1em;text-transform:uppercase;color:var(--faint);margin:0 0 6px}
+.modal-resource-name{font:700 22px/1.2 'Archivo',sans-serif;color:var(--hd);margin:0 0 18px}
+.modal-form{display:flex;flex-direction:column}
+.modal-form label{font:500 11px/1 'Spline Sans Mono',monospace;letter-spacing:.04em;color:var(--mut);display:block;margin-bottom:7px}
+.modal-form label .req{color:var(--ac)}
+.modal-form input{width:100%;box-sizing:border-box;font:400 14px/1 'Archivo',sans-serif;padding:13px 14px;border-radius:4px;border:1px solid var(--cardb);background:var(--input-bg);color:var(--tx);outline:none;margin-bottom:16px}
+.modal-form input:focus{border-color:var(--ac)}
+.modal-form button{margin-top:6px}
+.modal-success{text-align:center;padding:20px 0}
+.modal-success h3{font:700 20px/1.2 'Archivo',sans-serif;color:var(--hd);margin:0 0 12px}
+.modal-success p{font:400 14px/1.5 'Archivo',sans-serif;color:var(--mut);margin:0 0 20px}
+.btn-mint-full{font:600 13px/1 'Spline Sans Mono',monospace;letter-spacing:.04em;color:#11141c;background:var(--mint);border:none;padding:15px 18px;border-radius:4px;cursor:pointer;width:100%;box-sizing:border-box;text-decoration:none}
+.btn-mint-full:hover{opacity:.9}
