@@ -1,1 +1,1 @@
-Pages finished but not yet live. `bench-pro/index.html` here is the Bench Pro sales page; on launch day it replaces `/bench-pro/index.html` (which is the waitlist page until then). Not linked from anywhere, but Cloudflare Pages does serve this folder.
+Pages finished but not yet live. `waitlist/` here is a finished page kept for later. Not linked from anywhere, but Cloudflare Pages does serve this folder.
