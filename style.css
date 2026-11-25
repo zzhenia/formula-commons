@@ -109,11 +109,10 @@ body {
 .bp-banner:hover { border-color: var(--mint); }
 .bp-in {
   display: grid;
-  grid-template-columns: minmax(0, auto) minmax(0, 420px);
-  justify-content: space-between;
-  align-items: end;
+  grid-template-columns: auto minmax(0, 1fr);
+  align-items: center;
   gap: 18px 48px;
-  padding: 26px 32px 28px;
+  padding: 28px 32px;
 }
 .bp-in p { margin: 0; }
 .bp-logo { font: 500 12px/1 'Spline Sans Mono', monospace; letter-spacing: .04em; color: rgba(255,255,255,.8); margin-bottom: 16px !important; }
@@ -121,19 +120,20 @@ body {
 .bp-title { font: 800 46px/1 'Archivo', sans-serif; letter-spacing: .005em; color: #fff; white-space: nowrap; }
 .bp-pro {
   display: inline-block;
-  margin-left: 12px;
-  padding: 5px 8px 4px;
-  border-radius: 4px;
+  margin-left: 6px;
+  padding: 3.5px 5.5px 3px;
+  border-radius: 3px;
   background: var(--mint);
   color: #0b1a3d;
-  font: 700 14px/1 'Spline Sans Mono', monospace;
+  font: 700 10px/1 'Spline Sans Mono', monospace;
   letter-spacing: .08em;
-  vertical-align: 9px;
+  vertical-align: top;
+  position: relative; top: 4px;
 }
 .bp-slogan { font: 600 17px/1 'Spline Sans Mono', monospace; letter-spacing: .16em; margin-top: 14px !important; white-space: nowrap; }
 .bp-clear { color: #fff; }
 .bp-thinking { color: var(--mint); }
-.bp-line { font: 400 15px/1.5 'Archivo', sans-serif; color: rgba(255,255,255,.78); }
+.bp-line { font: 400 15px/1.5 'Archivo', sans-serif; color: rgba(255,255,255,.78); max-width: 520px; justify-self: center; text-align: center; }
 .bp-ghost { visibility: hidden; }
 .bp-hide { visibility: hidden; }
 .bp-caret { position: relative; animation: bp-blink 1s steps(1) infinite; }
@@ -141,13 +141,14 @@ body {
 @keyframes bp-blink { 50% { opacity: 0; } }
 @media (max-width: 768px) {
   .bp-in { grid-template-columns: 1fr; padding: 22px 20px 24px; }
+  .bp-line { justify-self: start; text-align: left; }
   .bp-title { font-size: 38px; }
   .bp-slogan { font-size: 15px; }
   .bp-line { font-size: 14px; }
 }
 @media (max-width: 390px) {
   .bp-title { font-size: 34px; }
-  .bp-pro { margin-left: 8px; font-size: 12px; vertical-align: 7px; }
+  .bp-pro { margin-left: 5px; font-size: 9px; top: 3px; }
   .bp-slogan { font-size: 14px; letter-spacing: .12em; }
 }
 
