@@ -137,7 +137,7 @@ body {
 .bp-ghost { visibility: hidden; }
 .bp-hide { visibility: hidden; }
 .bp-caret { position: relative; animation: bp-blink 1s steps(1) infinite; }
-.bp-caret::before { content: ""; position: absolute; left: 3px; bottom: -.1em; width: .5em; height: 1em; background: var(--mint); }
+.bp-caret::before { content: ""; position: absolute; left: 3px; bottom: .15em; width: .5em; height: .85em; background: var(--mint); }
 @keyframes bp-blink { 50% { opacity: 0; } }
 @media (max-width: 768px) {
   .bp-in { grid-template-columns: 1fr; padding: 22px 20px 24px; }
